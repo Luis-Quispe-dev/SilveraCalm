@@ -1,0 +1,41 @@
+# SilveraCalm — reglas para buscadores y asistentes de IA
+# Queremos que Google, Bing y los asistentes de IA encuentren y citen este sitio.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Buscadores
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Asistentes de IA (búsqueda y citas)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Entrenamiento de modelos de IA (Gemini, ChatGPT, Claude)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://silveracalm.u20231b869.workers.dev/sitemap.xml
