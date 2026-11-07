@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+.vscode
+node_modules
+.wrangler
+worker
+wrangler.jsonc
+wrangler.toml
+README.md
+INSTRUCCIONES-CHATBOT.md
+package.json
+package-lock.json
