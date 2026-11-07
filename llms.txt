@@ -1,0 +1,23 @@
+# SilveraCalm
+
+> SilveraCalm («Cuidando a quienes cuidan») es una plataforma AgeTech de bienestar para hijas e hijos que cuidan a sus padres mayores en Lima, Perú. Reemplaza las llamadas de control y las cámaras por telemetría pasiva: un sensor discreto en el botiquín envía una confirmación silenciosa al celular de la cuidadora cuando el botiquín se abre a la hora de la toma. Es un proyecto académico en desarrollo (Proyecto S1708).
+
+## Qué resuelve
+- El agotamiento y la culpa del cuidador familiar (síndrome del cuidador).
+- Los olvidos de medicación en adultos mayores que pasan el día solos.
+- La tensión de las llamadas de control («¡no me trates como a un niño!»), que desgastan la relación entre padres e hijos.
+
+## Cómo funciona
+- Un sensor Bluetooth de bajo consumo en el botiquín o pastillero detecta cuándo se abre. Confirma la apertura del botiquín, no que se haya tomado la pastilla.
+- El adulto mayor no usa pantallas, apps ni botones.
+- No usa cámaras ni vigilancia.
+- Silvio, un búho asistente, da recordatorios amables por voz, ligados a momentos cotidianos como el café de la mañana.
+- Si se cae el internet, los registros se guardan en el dispositivo y se sincronizan después.
+
+## Test de Tranquilidad Familiar
+- Evaluación gratuita de unos 2 minutos.
+- Entrega un Score de Tranquilidad, el nivel de riesgo de omisión de medicamentos, recomendaciones personalizadas y la «Guía de Cuidado sin Estrés» en PDF.
+
+## Enlaces
+- [Landing page](https://silveracalm.u20231b869.workers.dev/): presentación, test y preguntas frecuentes
+- [Blog SilveraCalm](https://silveracalm.blogspot.com/): historias y consejos para hijas cuidadoras
