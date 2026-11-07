@@ -7,7 +7,7 @@
   <meta name="description" content="Test gratuito de 2 minutos para hijas e hijos cuidadores en Lima. Descubre cómo acompañar el tratamiento de tu papá sin llamadas que generen tensión, con telemetría pasiva y respeto a su autonomía." />
   <meta name="theme-color" content="#3A637B" />
 
-  <!-- Open Graph (cómo se ve el enlace al compartirlo en WhatsApp, Facebook, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="SilveraCalm | Cuidando a quienes cuidan" />
   <meta property="og:description" content="Haz el Test de Tranquilidad Familiar y recibe la Guía de Cuidado sin Estrés." />
   <meta property="og:type" content="website" />
@@ -15,7 +15,7 @@
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
-  <!-- Tipografías oficiales: Outfit (titulares) + Inter (cuerpo y etiquetas) -->
+  <!-- Tipografías oficiales: Outfit (titulares) + Inter (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -47,7 +47,7 @@
 
       <div class="header-actions">
         <a href="#" class="btn btn-primary btn-sm hide-mobile" data-test-cta>
-          Hacer el test gratuito <span aria-hidden="true">→</span>
+          Hacer el test gratuito <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
           <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -62,7 +62,7 @@
       <a href="#historias">Historias</a>
       <a href="#blog">Blog</a>
       <a href="#faq">Preguntas</a>
-      <a href="#" class="btn btn-primary btn-block" data-test-cta>Hacer el test gratuito <span aria-hidden="true">→</span></a>
+      <a href="#" class="btn btn-primary btn-block" data-test-cta>Hacer el test gratuito <span class="btn-arrow" aria-hidden="true">→</span></a>
     </nav>
   </header>
 
@@ -70,11 +70,17 @@
 
     <!-- ================= HERO ================= -->
     <section class="hero" id="hero">
+      <!-- Capas de resplandor orgánico etéreo -->
+      <div class="hero-blobs-layer" aria-hidden="true">
+        <div class="hero-blob hero-blob--salvia"></div>
+        <div class="hero-blob hero-blob--lavanda"></div>
+      </div>
+
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="badge badge-secondary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 8C8 10 5.9 16.2 3.8 21.3l1.9.7 1-2.3c.5.2 1 .3 1.3.3C19 20 22 3 22 3c-1 2-8 2.3-13 3.3S2 11.5 2 13.5s1.8 3.8 1.8 3.8C7 8 17 8 17 8z"/></svg>
-            Test de Tranquilidad Familiar
+            <span class="badge-pulse-dot" aria-hidden="true"></span>
+            Test de Tranquilidad Familiar · 2 min
           </span>
 
           <h1>
@@ -87,34 +93,60 @@
 
           <div class="hero-actions">
             <a href="#" class="btn btn-primary btn-lg" data-test-cta>
-              Hacer el test gratuito <span aria-hidden="true">→</span>
+              Hacer el test gratuito <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
             <a href="#como-funciona" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
           </div>
 
           <ul class="trust-pills" aria-label="Garantías">
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>100% gratis y confidencial</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Solo 2 minutos</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Guía PDF de regalo</li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              100% confidencial
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              Solo 2 minutos
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Guía PDF sin costo
+            </li>
           </ul>
         </div>
 
         <div class="hero-visual">
           <figure class="hero-card">
             <span class="floating-tag">Cuidando a quienes nos cuidaron</span>
+
             <div class="hero-photo">
+              <!-- Live status badge flotante sobre la foto -->
+              <span class="hero-live-badge">
+                <span class="badge-pulse-dot" aria-hidden="true"></span>
+                Botiquín inteligente activo
+              </span>
+
               <img
                 src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80"
-                alt="Hija adulta y su padre mayor compartiendo un momento tranquilo en casa"
+                alt="Hija adulta y su padre mayor compartiendo un momento sereno en casa"
                 width="900" height="675"
                 onerror="this.style.display='none'" />
-              <figcaption>Marisela y su papá Carlos · San Borja, Lima</figcaption>
+              <figcaption>
+                <span>Marisela y su papá Carlos (75 años)</span>
+                <span>San Borja, Lima</span>
+              </figcaption>
             </div>
 
+            <!-- Consejo de Silvio con mascota animada y sombra -->
             <div class="silvera-tip">
-              <img src="assets/img/logo-silveracalm.png" alt="" class="silvera-avatar" width="44" height="64" />
+              <div class="silvio-mascot-container">
+                <img src="assets/img/logo-silveracalm.png" alt="Silvio el búho" class="silvera-avatar" width="44" height="64" />
+                <div class="silvio-shadow" aria-hidden="true"></div>
+              </div>
               <div>
-                <p class="silvera-title">Consejo de Silvera</p>
+                <p class="silvera-title">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  Consejo de Silvera
+                </p>
                 <p class="silvera-text">Sin alarmas frías ni llamadas que incomoden: una confirmación silenciosa basta para trabajar tranquila.</p>
               </div>
             </div>
@@ -126,43 +158,64 @@
     <!-- ================= BENEFICIOS ================= -->
     <section class="section section-white" id="beneficios">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <span class="eyebrow">Lo que obtienes</span>
           <h2>¿Qué lograrás con el test?</h2>
-          <p>Una evaluación clara y empática para cambiar la incertidumbre por calma.</p>
+          <p>Una evaluación clara, humana y empática para transformar la incertidumbre en tranquilidad familiar.</p>
         </header>
 
-        <div class="grid-4">
-          <article class="feature-card">
-            <span class="feature-icon tone-primary" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
-            </span>
-            <h3>Conocer su riesgo de omisión</h3>
-            <p>Identifica posibles olvidos en sus tomas antes de que se conviertan en una urgencia.</p>
+        <div class="benefits-grid">
+          <!-- Card destacada estilo Bento (Span principal) -->
+          <article class="feature-card feature-card--highlight" data-reveal data-reveal-delay="1">
+            <div>
+              <div class="feature-icon-wrapper">
+                <span class="feature-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
+                </span>
+              </div>
+              <h3>Conocer su riesgo de omisión médica</h3>
+              <p>Identifica patrones de olvidos en sus tomas diarias de medicamentos antes de que se conviertan en una urgencia o un susto.</p>
+            </div>
+            <span class="feature-card-tag">Evaluación preventiva · Prioridad geriátrica</span>
           </article>
 
-          <article class="feature-card">
-            <span class="feature-icon tone-secondary" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg>
-            </span>
-            <h3>Recibir pautas personalizadas</h3>
-            <p>Recomendaciones según sus medicinas (hipertensión, diabetes), su edad y tu horario de oficina.</p>
+          <article class="feature-card" data-reveal data-reveal-delay="2">
+            <div>
+              <div class="feature-icon-wrapper">
+                <span class="feature-icon tone-secondary" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg>
+                </span>
+              </div>
+              <h3>Pautas personalizadas para su rutina</h3>
+              <p>Recomendaciones adaptadas a sus tratamientos (hipertensión, diabetes), su edad y los horarios de tu jornada de trabajo.</p>
+            </div>
+            <span class="feature-card-tag" style="color: var(--color-secondary-text);">Acompañamiento a medida</span>
           </article>
 
-          <article class="feature-card">
-            <span class="feature-icon tone-tertiary" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </span>
-            <h3>Hablar sin discutir</h3>
-            <p>Formas de recordarle sus dosis que respetan su dignidad y evitan el «¡no me vigiles!».</p>
+          <article class="feature-card" data-reveal data-reveal-delay="3">
+            <div>
+              <div class="feature-icon-wrapper">
+                <span class="feature-icon tone-tertiary" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+              </div>
+              <h3>Acompañar sin discusiones ni reproches</h3>
+              <p>Estrategias de comunicación que respetan la dignidad de tu padre y evitan la frustración del «¡no me estés controlando!».</p>
+            </div>
+            <span class="feature-card-tag" style="color: var(--color-tertiary-text);">Respeto a la autonomía</span>
           </article>
 
-          <article class="feature-card">
-            <span class="feature-icon tone-dark" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
-            </span>
-            <h3>Recuperar tu paz mental</h3>
-            <p>Deja de ser la «alarma humana» de las 12:30 y vuelve a trabajar concentrada.</p>
+          <article class="feature-card" data-reveal data-reveal-delay="4">
+            <div>
+              <div class="feature-icon-wrapper">
+                <span class="feature-icon tone-dark" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+                </span>
+              </div>
+              <h3>Recuperar tu foco y tu paz mental</h3>
+              <p>Deja de ser la «alarma humana» a la 1:00 PM y concéntrate en tus labores sabiendo que todo está en orden en casa.</p>
+            </div>
+            <span class="feature-card-tag" style="color: var(--color-primary);">Cero culpa, cero sobrecarga</span>
           </article>
         </div>
       </div>
@@ -171,102 +224,148 @@
     <!-- ================= CÓMO FUNCIONA ================= -->
     <section class="section" id="como-funciona">
       <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">En 3 pasos</span>
+        <header class="section-head" data-reveal>
+          <span class="eyebrow">En 3 simples pasos</span>
           <h2>¿Cómo funciona?</h2>
-          <p>Rápido, sencillo y sin costos ocultos.</p>
+          <p>Un proceso fluido, respetuoso con tu tiempo y completamente libre de costos.</p>
         </header>
 
-        <div class="steps-card">
-          <ol class="stepper" aria-label="Pasos del test">
+        <div class="steps-card" data-reveal>
+          <ol class="stepper" id="stepper" aria-label="Pasos del test">
+            <!-- Barra animada de progreso entre los pasos -->
+            <div class="stepper-progress-track" aria-hidden="true">
+              <div class="stepper-progress-bar"></div>
+            </div>
+
             <li class="step">
-              <span class="step-dot">1</span>
-              <h3>Responde</h3>
-              <p>Un cuestionario breve sobre los hábitos médicos y la rutina de tu papá en casa.</p>
+              <span class="step-indicator" data-step="1">1</span>
+              <h3>Responde el test</h3>
+              <p>Un cuestionario breve sobre las tomas médicas y la dinámica habitual de tu papá en el hogar.</p>
             </li>
             <li class="step">
-              <span class="step-dot">2</span>
-              <h3>Obtén tu resultado</h3>
-              <p>Tu Score de Tranquilidad y el nivel de riesgo de omisión, al instante.</p>
+              <span class="step-indicator" data-step="2">2</span>
+              <h3>Obtén tu diagnóstico</h3>
+              <p>Tu Score de Tranquilidad y el nivel de riesgo de omisión de dosis, calculado de forma inmediata.</p>
             </li>
             <li class="step">
-              <span class="step-dot">3</span>
-              <h3>Recibe la guía</h3>
-              <p>Descarga la «Guía de Cuidado sin Estrés» para acompañarlo sin invadir su intimidad.</p>
+              <span class="step-indicator" data-step="3">3</span>
+              <h3>Recibe la guía práctica</h3>
+              <p>Descarga la «Guía de Cuidado sin Estrés» con pautas de comunicación y telemetría pasiva.</p>
             </li>
           </ol>
 
           <div class="steps-footer">
             <p class="privacy-note">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Privado y confidencial · Tus datos están protegidos
+              Privado y confidencial · Datos 100% protegidos
             </p>
-            <a href="#" class="btn btn-primary" data-test-cta>Comenzar ahora (2 min) <span aria-hidden="true">→</span></a>
+            <a href="#" class="btn btn-primary" data-test-cta>
+              Comenzar ahora (2 min) <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
 
-        <!-- Telemetría pasiva vs vigilancia -->
-        <div class="compare">
-          <div class="compare-col compare-before">
-            <p class="compare-label">Antes</p>
-            <ul>
-              <li>Llamadas de control a mediodía</li>
-              <li>Cámaras que invaden su intimidad</li>
-              <li>Dudas, tensión y culpa</li>
-            </ul>
-          </div>
-          <div class="compare-col compare-after">
-            <p class="compare-label">Con SilveraCalm</p>
-            <ul>
-              <li>Confirmación silenciosa en tu celular</li>
-              <li>Telemetría pasiva en el botiquín, sin cámaras</li>
-              <li>Autonomía senior y paz mental familiar</li>
-            </ul>
+        <!-- Comparativa Antes / Con SilveraCalm -->
+        <div class="compare-container" data-reveal>
+          <div class="compare" id="compare">
+            <div class="compare-col compare-before">
+              <p class="compare-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                Antes de SilveraCalm
+              </p>
+              <ul>
+                <li>Llamadas de control insistentes que interrumpen su almuerzo y tu trabajo</li>
+                <li>Tentación de instalar cámaras que vulneran su intimidad</li>
+                <li>Dudas constantes, discusiones familiares y sensación de culpa</li>
+              </ul>
+            </div>
+            <div class="compare-col compare-after">
+              <p class="compare-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Con SilveraCalm
+              </p>
+              <ul>
+                <li>Confirmación silenciosa y automática en tu celular sin timbrazos</li>
+                <li>Telemetría pasiva en el botiquín habitual, sin cámaras ni vigilancia</li>
+                <li>El padre conserva su autonomía y la familia recupera la tranquilidad</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= HISTORIAS (casos ilustrativos) ================= -->
+    <!-- ================= HISTORIAS (Casos Ilustrativos) ================= -->
     <section class="section section-white" id="historias">
       <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">Historias como la tuya</span>
-          <h2>Lo que viven otras hijas cuidadoras</h2>
-          <p>Casos ilustrativos basados en las situaciones más comunes de familias en Lima.</p>
+        <header class="section-head" data-reveal>
+          <span class="eyebrow">Historias que inspiran</span>
+          <h2>Lo que viven otras hijas e hijos cuidadores</h2>
+          <p>Casos ilustrativos basados en vivencias reales de familias en Lima.</p>
         </header>
 
-        <div class="grid-3">
-          <article class="story-card">
-            <p class="story-quote">«Entendí que el enojo de mi papá no era ingratitud, sino miedo a perder su independencia. Cambiaron por completo nuestras mañanas.»</p>
+        <div class="stories-grid">
+          <!-- Story principal con mayor presencia -->
+          <article class="story-card story-card--featured" data-reveal data-reveal-delay="1">
+            <div class="story-quote-wrap">
+              <svg class="story-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              <p class="story-quote">«Entendí que el enojo de mi papá cuando le preguntaba por sus pastillas no era ingratitud, sino miedo a perder su independencia. Cambiaron por completo nuestras mañanas al quitar esa llamada obligatoria.»</p>
+            </div>
             <footer class="story-author">
               <span class="avatar tone-primary">MG</span>
-              <span><strong>Marisela G.</strong><small>Hija de Carlos, 75 años</small></span>
+              <div>
+                <strong>Marisela G.</strong>
+                <small>Hija y cuidadora de Carlos (75 años) · San Borja</small>
+              </div>
             </footer>
           </article>
 
-          <article class="story-card">
-            <p class="story-quote">«Ya no siento culpa cuando me quedo hasta tarde en la oficina. Sé que está bien sin tener que llamarlo cada hora.»</p>
+          <article class="story-card" data-reveal data-reveal-delay="2">
+            <div class="story-quote-wrap">
+              <svg class="story-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              <p class="story-quote">«Ya no siento esa punzada de culpa cuando tengo reuniones largas en la oficina. Sé que está bien sin tener que llamarlo cada hora ni parecer una policía.»</p>
+            </div>
             <footer class="story-author">
               <span class="avatar tone-secondary">CP</span>
-              <span><strong>Claudia P.</strong><small>Hija de Roberto, 78 años</small></span>
+              <div>
+                <strong>Claudia P.</strong>
+                <small>Hija de Roberto (78 años) · Santiago de Surco</small>
+              </div>
             </footer>
           </article>
 
-          <article class="story-card">
-            <p class="story-quote">«Cuidar su hipertensión sin vigilarlo con cámaras era lo que necesitábamos. La guía la compartí con mis hermanos.»</p>
+          <article class="story-card" data-reveal data-reveal-delay="3">
+            <div class="story-quote-wrap">
+              <svg class="story-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+              <p class="story-quote">«Cuidar su hipertensión sin vigilarlo con cámaras era justo lo que necesitábamos. La guía me sirvió para ponerme de acuerdo con mis hermanos.»</p>
+            </div>
             <footer class="story-author">
               <span class="avatar tone-tertiary">LM</span>
-              <span><strong>Lucía M.</strong><small>Hija de Manuel, 72 años</small></span>
+              <div>
+                <strong>Lucía M.</strong>
+                <small>Hija de Manuel (72 años) · Miraflores</small>
+              </div>
             </footer>
           </article>
         </div>
 
-        <ul class="trust-bar" aria-label="Compromisos">
-          <li>Confidencial</li>
-          <li>Enfoque geriátrico</li>
-          <li>Sin cámaras ni vigilancia</li>
-          <li>Personalizado</li>
+        <ul class="trust-bar" data-reveal aria-label="Compromisos">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            100% Confidencial
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Enfoque geriátrico
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            Cero cámaras ni vigilancia
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Diagnóstico a tu medida
+          </li>
         </ul>
       </div>
     </section>
@@ -274,49 +373,56 @@
     <!-- ================= BLOG EN VIVO ================= -->
     <section class="section" id="blog">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <span class="eyebrow">Blog SilveraCalm</span>
-          <h2>Historias reales de hijas cuidadoras</h2>
-          <p>Consejos y relatos para cuidar a tus padres con amor, sin peleas y sin perder tu paz mental.</p>
+          <h2>Historias y reflexiones para el cuidador</h2>
+          <p>Consejos y artículos prácticos para cuidar a tus padres con ternura, sin desgaste y sin perder tu tranquilidad.</p>
         </header>
 
-        <div class="blog-toolbar">
+        <div class="blog-toolbar" data-reveal>
           <label class="search-field">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             <span class="sr-only">Buscar en el blog</span>
-            <input type="search" id="blogSearch" placeholder="Buscar artículos…" autocomplete="off" />
+            <input type="search" id="blogSearch" placeholder="Buscar por tema o palabra clave…" autocomplete="off" />
           </label>
           <p class="live-status" id="blogStatus" aria-live="polite">
-            <span class="live-dot" aria-hidden="true"></span><span id="blogStatusText">Conectando con el blog…</span>
+            <span class="live-dot" aria-hidden="true"></span><span id="blogStatusText">Conectando con el blog en vivo…</span>
           </p>
         </div>
 
-        <div class="chips" id="blogLabels" role="group" aria-label="Filtrar por tema"></div>
+        <div class="chips" id="blogLabels" role="group" aria-label="Filtrar por tema" data-reveal></div>
 
-        <div id="blogFeatured"></div>
+        <div id="blogFeatured" data-reveal></div>
 
-        <div class="blog-grid" id="blogGrid" aria-live="polite">
+        <div class="blog-grid" id="blogGrid" aria-live="polite" data-reveal>
           <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
         </div>
 
-        <p class="blog-empty" id="blogEmpty" hidden>No encontramos artículos con esa búsqueda.</p>
+        <p class="blog-empty" id="blogEmpty" hidden>No encontramos artículos que coincidan con tu búsqueda.</p>
 
-        <div class="blog-more">
+        <div class="blog-more" data-reveal>
           <button type="button" class="btn btn-ghost" id="blogMore" hidden>Cargar más artículos</button>
-          <a href="https://silveracalm.blogspot.com/" target="_blank" rel="noopener" class="btn btn-outline" id="blogExternal">Visitar el blog completo <span aria-hidden="true">↗</span></a>
+          <a href="https://silveracalm.blogspot.com/" target="_blank" rel="noopener" class="btn btn-outline" id="blogExternal">
+            Visitar el blog completo <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ================= CIERRE ================= -->
+    <!-- ================= CIERRE (CTA FINAL) ================= -->
     <section class="section section-white">
       <div class="container narrow">
-        <div class="cta-final">
-          <img src="assets/img/logo-silveracalm.png" alt="" class="cta-logo" width="56" height="82" />
-          <h2>Hoy puedes dar un gran paso <span class="text-primary-soft">por su salud y tu paz mental</span></h2>
-          <p>Evalúa en 2 minutos el riesgo de omisión médica de tu papá. Recibe tu diagnóstico personalizado y la «Guía de Cuidado sin Estrés», totalmente gratis.</p>
-          <a href="#" class="btn btn-primary btn-lg" data-test-cta>Hacer el test gratuito <span aria-hidden="true">→</span></a>
-          <p class="fine-print">Sin tarjeta · Acceso inmediato · Respeto total a su autonomía</p>
+        <div class="cta-final" data-reveal>
+          <div class="silvio-mascot-container">
+            <img src="assets/img/logo-silveracalm.png" alt="Silvio" class="cta-logo" width="56" height="82" />
+            <div class="silvio-shadow" aria-hidden="true"></div>
+          </div>
+          <h2>Hoy puedes dar un paso decisivo <span class="text-primary-soft">por su salud y tu paz mental</span></h2>
+          <p>Evalúa en 2 minutos el riesgo de omisión médica de tu papá. Recibe tu diagnóstico personalizado y la «Guía de Cuidado sin Estrés», de forma totalmente gratuita.</p>
+          <a href="#" class="btn btn-primary btn-lg" data-test-cta>
+            Hacer el test gratuito <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="fine-print">Sin registro con tarjeta · Acceso instantáneo · Respeto absoluto a su privacidad</p>
         </div>
       </div>
     </section>
@@ -324,26 +430,39 @@
     <!-- ================= FAQ ================= -->
     <section class="section" id="faq">
       <div class="container narrow">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <h2>Preguntas frecuentes</h2>
+          <p>Respuestas claras a las dudas más comunes de hijas e hijos cuidadores.</p>
         </header>
 
-        <div class="faq">
+        <div class="faq" data-reveal>
           <details>
-            <summary>¿El test tiene algún costo o compromiso?</summary>
-            <p>No, es 100% gratuito. Sirve para orientarte y medir la sobrecarga que vives como cuidadora o cuidador.</p>
+            <summary>
+              <span>¿El test tiene algún costo o compromiso?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <p>No, es 100% gratuito. Su propósito es orientarte, evaluar el nivel de sobrecarga que experimentas como cuidador o cuidadora, y brindarte herramientas inmediatas sin cobros ocultos.</p>
           </details>
           <details>
-            <summary>¿Implica instalar cámaras en casa de mi papá?</summary>
-            <p>Nunca. SilveraCalm usa telemetría pasiva: un sensor discreto en el botiquín avisa cuando se abre. Sin cámaras y sin vigilancia.</p>
+            <summary>
+              <span>¿Implica instalar cámaras en casa de mi papá?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <p>Nunca. En SilveraCalm defendemos la autonomía de los adultos mayores. Empleamos telemetría pasiva: un sensor discreto en su botiquín registra de manera silenciosa las aperturas sin invadir su intimidad ni vigilarlo.</p>
           </details>
           <details>
-            <summary>Mi papá no se lleva bien con la tecnología, ¿igual funciona?</summary>
-            <p>Sí. Él no tiene que tocar pantallas ni botones: sigue usando su botiquín como siempre.</p>
+            <summary>
+              <span>Mi papá no se lleva bien con la tecnología, ¿igual funciona?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <p>Por supuesto. Tu padre no tiene que interactuar con pantallas, instalar aplicaciones ni presionar botones complejos. Sigue su rutina diaria abriendo su botiquín habitual como siempre lo ha hecho.</p>
           </details>
           <details>
-            <summary>¿Qué pasa si se cae el internet en su casa?</summary>
-            <p>El dispositivo guarda los registros de forma local y los sincroniza apenas vuelve la conexión.</p>
+            <summary>
+              <span>¿Qué pasa si se cae la conexión de internet en su casa?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <p>El dispositivo almacena los registros de manera local y encriptada en su memoria interna, y se sincroniza automáticamente con tu aplicación tan pronto se reanuda la conexión.</p>
           </details>
         </div>
       </div>
@@ -363,15 +482,15 @@
     </div>
   </footer>
 
-  <!-- ================= MODAL: TEST (solo si aún no configuras el enlace) ================= -->
+  <!-- ================= MODAL: TEST (Aviso cuando TEST_URL no está configurada) ================= -->
   <div class="modal" id="testModal" role="dialog" aria-modal="true" aria-labelledby="testModalTitle" hidden>
     <div class="modal-backdrop" data-close></div>
     <div class="modal-panel modal-sm">
-      <button type="button" class="modal-close" aria-label="Cerrar" data-close>✕</button>
+      <button type="button" class="modal-close" aria-label="Cerrar modal" data-close>✕</button>
       <img src="assets/img/logo-silveracalm.png" alt="" class="modal-logo" width="48" height="70" />
       <h3 id="testModalTitle">El test estará disponible muy pronto</h3>
-      <p>Estamos preparando el Test de Tranquilidad Familiar. Mientras tanto, te invitamos a leer nuestros artículos.</p>
-      <a href="#blog" class="btn btn-primary btn-block" data-close>Ir al blog</a>
+      <p>Estamos ultimando los detalles del Test de Tranquilidad Familiar. Mientras tanto, te invitamos a explorar las historias y reflexiones en nuestro blog.</p>
+      <a href="#blog" class="btn btn-primary btn-block" data-close>Ir al blog de SilveraCalm</a>
     </div>
   </div>
 
@@ -380,14 +499,17 @@
     <div class="modal-backdrop" data-close></div>
     <div class="modal-panel modal-reader">
       <div class="reader-bar">
-        <span class="reader-brand"><img src="assets/img/logo-silveracalm.png" alt="" width="20" height="29" /> Blog SilveraCalm</span>
+        <span class="reader-brand">
+          <img src="assets/img/logo-silveracalm.png" alt="" width="20" height="29" /> 
+          Blog SilveraCalm
+        </span>
         <button type="button" class="modal-close" aria-label="Cerrar artículo" data-close>✕</button>
       </div>
       <article class="reader" id="readerBody"></article>
     </div>
   </div>
 
-  <!-- DOMPurify: limpia el HTML de los artículos antes de mostrarlo (seguridad) -->
+  <!-- Scripts -->
   <script src="assets/js/vendor-purify.min.js" defer></script>
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
