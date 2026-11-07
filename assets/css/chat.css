@@ -4,16 +4,16 @@
    oficiales de respaldo (por eso cada var() trae un color).
    ========================================================= */
 .sc-chat {
-  --sc-primary: var(--color-primary, #3A637B);
-  --sc-primary-hover: var(--color-primary-hover, #2E4F63);
-  --sc-secondary: var(--color-secondary, #4E7C6B);
-  --sc-secondary-soft: var(--color-secondary-soft, #E5EFEA);
-  --sc-bg: var(--color-neutral-bg, #F9F8F5);
-  --sc-dark: var(--color-dark-inverted, #2B2B2B);
-  --sc-muted: var(--color-text-muted, #5B6470);
-  --sc-border: var(--color-border-light, #E2E8F0);
+  --sc-primary: var(--brand-primary, var(--color-primary, #009245));
+  --sc-primary-hover: var(--brand-primary-hover, var(--color-primary-hover, #007A31));
+  --sc-secondary: var(--brand-teal, var(--color-secondary, #148877));
+  --sc-secondary-soft: var(--surface-mint, var(--color-secondary-soft, #E2F3E7));
+  --sc-bg: var(--bg-global, var(--color-neutral-bg, #F3F7F5));
+  --sc-dark: var(--brand-dark, var(--color-dark-inverted, #181E19));
+  --sc-muted: var(--text-muted, var(--color-text-muted, #55665C));
+  --sc-border: var(--border-subtle, var(--color-border-light, #D2E4DA));
   position: fixed; right: 20px; bottom: 20px; z-index: 70;
-  font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-body, 'Lato', system-ui, sans-serif);
 }
 .sc-chat .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
@@ -22,8 +22,8 @@
   display: flex; align-items: center; gap: 10px;
   background: var(--sc-primary); color: #fff; border: 0; cursor: pointer;
   padding: 8px 18px 8px 8px; border-radius: 999px;
-  box-shadow: 0 12px 28px -8px rgba(58, 99, 123, .55);
-  font: 600 15px/1 var(--font-label, 'Inter', sans-serif);
+  box-shadow: 0 12px 28px -8px rgba(0, 146, 69, .45);
+  font: 700 15px/1 var(--font-title, 'Nunito', sans-serif);
   transition: transform .25s cubic-bezier(.22,1,.36,1), background .2s;
   animation: sc-pop .6s cubic-bezier(.22,1,.36,1) 1.2s both;
 }
@@ -77,10 +77,11 @@
 
 .sc-chat-cta {
   display: inline-block; margin-top: 8px; padding: 8px 14px; border-radius: 999px;
-  background: var(--sc-secondary-soft); color: var(--color-secondary-text, #3D6455) !important;
-  font-weight: 600; font-size: 13.5px; text-decoration: none; border: 1px solid #CFE1D8;
+  background: var(--sc-secondary-soft); color: var(--header-deep-teal, var(--color-secondary-text, #0D6F5E)) !important;
+  font-family: var(--font-title, 'Nunito', sans-serif);
+  font-weight: 700; font-size: 13.5px; text-decoration: none; border: 1px solid var(--sc-border);
 }
-.sc-chat-cta:hover { background: #d8e8e0; }
+.sc-chat-cta:hover { background: #d2ede0; }
 
 /* "Escribiendo..." */
 .sc-typing .sc-bubble { display: flex; gap: 4px; padding: 14px; }
