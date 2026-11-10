@@ -2083,6 +2083,1361 @@ body.modal-open {
   }
 }
 
+/* =========================================================
+   SECCIÓN WEBINAR: CUIDADO Y ADHERENCIA MÉDICA
+   Diseño editorial senior inspirado en Calm / Linear / Stripe
+   ========================================================= */
+
+.nav-link-webinar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-badge-free {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--brand-lime);
+  color: var(--brand-dark);
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  line-height: 1.4;
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+.section-webinar {
+  position: relative;
+  background-color: var(--bg-global);
+  padding: 96px 0 100px;
+  overflow: hidden;
+}
+
+/* Capas de resplandor orgánico */
+.webinar-blobs-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.webinar-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.webinar-blob--mint {
+  top: 15%;
+  left: -8%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(226, 243, 231, 0.9) 0%, rgba(226, 243, 231, 0) 70%);
+}
+
+.webinar-blob--teal {
+  bottom: 10%;
+  right: -6%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(20, 136, 119, 0.12) 0%, rgba(20, 136, 119, 0) 70%);
+}
+
+.webinar-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Top Header Ribbon (Fiel al Flyer) ---------- */
+.webinar-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #009245 0%, #0D6F5E 100%);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px -4px rgba(0, 146, 69, 0.28);
+  color: #ffffff;
+  margin-bottom: 36px;
+}
+
+.webinar-topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.webinar-topic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.webinar-topbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.webinar-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.webinar-brand-logo {
+  width: 22px;
+  height: auto;
+  object-fit: contain;
+}
+
+.webinar-brand-text {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  letter-spacing: -0.01em;
+}
+
+.webinar-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.webinar-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.webinar-topbar-divider {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+}
+
+.webinar-free-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-lime);
+  color: var(--brand-dark);
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Bloque Hero del Webinar ---------- */
+.webinar-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.webinar-intro-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.webinar-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.webinar-urgency-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #9A3412;
+  background: #FFEDD5;
+  border: 1px solid #FED7AA;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.webinar-headline {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.4vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin-bottom: 18px;
+}
+
+.text-highlight-green {
+  color: var(--brand-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.webinar-lead {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.62;
+  color: var(--text-body);
+  margin-bottom: 24px;
+}
+
+/* ---------- Contador Regresivo en Vivo ---------- */
+.webinar-countdown-box {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.countdown-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--brand-teal);
+  margin-bottom: 12px;
+}
+
+.countdown-units-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countdown-card {
+  flex: 1;
+  background: var(--surface-mint);
+  border: 1px solid rgba(0, 146, 69, 0.16);
+  border-radius: var(--radius-sm);
+  padding: 10px 6px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.countdown-value {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--brand-primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.countdown-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.countdown-separator {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--brand-teal);
+  opacity: 0.7;
+}
+
+/* ---------- Marco de Foto Familiar ---------- */
+.webinar-photo-card {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.webinar-photo-frame {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.webinar-family-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transition: transform 0.6s var(--ease-soft);
+}
+
+.webinar-photo-card:hover .webinar-family-img {
+  transform: scale(1.03);
+}
+
+.webinar-photo-floating-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 30, 25, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.webinar-photo-caption {
+  padding: 12px 18px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.webinar-photo-caption svg {
+  color: var(--brand-teal);
+  flex-shrink: 0;
+}
+
+/* ---------- Tarjeta de Formulario Interactivo ---------- */
+.webinar-form-col {
+  position: relative;
+}
+
+.webinar-form-container {
+  background: var(--surface-white);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.webinar-form-container.is-highlighted {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 6px rgba(0, 146, 69, 0.2), var(--shadow-lg);
+  animation: pulseCardRing 1.2s ease;
+}
+
+@keyframes pulseCardRing {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.webinar-badge-free-callout {
+  display: inline-block;
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.webinar-form-title {
+  font-family: var(--font-title);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.22;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.text-free-accent {
+  color: var(--brand-primary);
+}
+
+.webinar-form-date-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-mint);
+  color: var(--brand-teal);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.webinar-form-date-banner svg {
+  color: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+.webinar-form-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.form-field-group {
+  margin-bottom: 16px;
+}
+
+.form-field-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.form-required {
+  color: #DC2626;
+  font-weight: 800;
+}
+
+.form-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-subtle);
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.form-field-input {
+  width: 100%;
+  padding: 13px 14px 13px 44px;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  color: var(--text-main);
+  background: var(--surface-neutral);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.form-field-input::placeholder {
+  color: #94A3B8;
+}
+
+.form-field-input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3.5px rgba(0, 146, 69, 0.15);
+}
+
+.form-field-input:focus + .form-input-icon,
+.form-input-wrapper:focus-within .form-input-icon {
+  color: var(--brand-primary);
+}
+
+.form-input-with-prefix {
+  display: flex;
+  align-items: center;
+}
+
+.form-phone-prefix {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #E2F3E7;
+  color: #0D6F5E;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 13px 12px;
+  border: 1.5px solid var(--border-subtle);
+  border-right: none;
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.form-field-input--prefixed {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 14px;
+}
+
+.form-error-msg {
+  display: block;
+  min-height: 18px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #DC2626;
+  margin-top: 4px;
+}
+
+.form-field-input.is-invalid {
+  border-color: #DC2626;
+  background: #FEF2F2;
+}
+
+.btn-webinar-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-title);
+  font-size: 1.02rem;
+  font-weight: 800;
+  padding: 15px 24px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #009245 0%, #007A31 100%);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-cta);
+  letter-spacing: 0.02em;
+  margin-top: 8px;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.btn-webinar-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  background: linear-gradient(135deg, #00A64E 0%, #008737 100%);
+}
+
+.btn-webinar-submit:active {
+  transform: translateY(0);
+}
+
+.webinar-form-guarantees {
+  margin-top: 14px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.guarantee-item svg {
+  color: var(--brand-teal);
+  flex-shrink: 0;
+}
+
+/* ---------- Estado Exitoso de la Tarjeta ---------- */
+.webinar-success-body {
+  text-align: center;
+  animation: fadeInScaleUp 0.4s var(--ease-spring) forwards;
+}
+
+@keyframes fadeInScaleUp {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.success-top-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.success-icon-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 146, 69, 0.2);
+}
+
+.success-pill {
+  font-family: var(--font-title);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--brand-primary);
+  background: rgba(0, 146, 69, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.success-headline {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  margin-bottom: 6px;
+}
+
+.success-message {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  margin-bottom: 20px;
+}
+
+.success-event-summary {
+  background: var(--bg-global);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.summary-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.summary-line:last-child {
+  margin-bottom: 0;
+}
+
+.summary-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.summary-line strong {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.summary-line small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.btn-add-calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+  background: transparent;
+  padding: 13px 20px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-add-calendar:hover {
+  background: var(--surface-mint);
+  color: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-link-edit {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--brand-teal);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 14px;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.btn-link-edit:hover {
+  color: var(--header-deep-teal);
+}
+
+/* ---------- Sección: En este Webinar Aprenderás ---------- */
+.webinar-learn-block {
+  margin-top: 64px;
+}
+
+.webinar-learn-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.webinar-learn-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.webinar-learn-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.learn-card {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.3s var(--ease-spring);
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.learn-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.learn-card:hover .learn-card-icon {
+  background: #D2EEDC;
+  transform: scale(1.05);
+}
+
+.learn-card-text {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.learn-card-text strong {
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 4px;
+}
+
+/* ---------- Sección: ¿Te identificas con alguna de estas situaciones? ---------- */
+.webinar-situations-section {
+  margin-top: 60px;
+}
+
+.situations-container-card {
+  background: linear-gradient(180deg, #EBF5EE 0%, #F3F7F5 100%);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 44px 36px;
+  box-shadow: var(--shadow-xs);
+}
+
+.situations-card-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.situations-card-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.55rem, 2.7vw, 2.1rem);
+  font-weight: 800;
+  color: var(--brand-dark);
+  letter-spacing: -0.02em;
+  margin: 6px 0 10px;
+}
+
+.situations-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.situations-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.situation-item {
+  text-align: center;
+  padding: 16px 12px;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.situation-item:hover {
+  transform: translateY(-4px);
+}
+
+.situation-avatar-circle {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.situation-item:hover .situation-avatar-circle {
+  transform: scale(1.08);
+}
+
+.situation-item-title {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  margin-bottom: 8px;
+}
+
+.situation-item-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.48;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Sección: Dual Cards (Organizador + Bonus) ---------- */
+.webinar-dual-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.webinar-info-card {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-eyebrow-tag {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-teal);
+  margin-bottom: 4px;
+}
+
+.card-heading {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  letter-spacing: -0.015em;
+  margin-bottom: 18px;
+}
+
+.text-brand-green {
+  color: var(--brand-primary);
+}
+
+.organizer-brand-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.organizer-avatar-wrap {
+  width: 64px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.organizer-avatar-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.organizer-card:hover .organizer-avatar-img {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.organizer-name {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  margin: 0 0 2px;
+}
+
+.organizer-category {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 6px;
+}
+
+.organizer-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-mint);
+  color: var(--brand-teal);
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.organizer-bio-text {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* Bonus Card */
+.bonus-ribbon-tag {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-lime);
+  color: var(--brand-dark);
+  font-family: var(--font-title);
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.03em;
+}
+
+.bonus-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
+.bonus-checklist-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bonus-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.bonus-check-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(0, 146, 69, 0.25);
+}
+
+.bonus-checklist-text strong {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 2px;
+}
+
+.bonus-checklist-text p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* ---------- Sección: Lo que Dicen Otros Familiares ---------- */
+.webinar-feedback-section {
+  margin-top: 56px;
+}
+
+.feedback-heading-box {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.feedback-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.55rem, 2.7vw, 2.1rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.feedback-bubbles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.speech-bubble-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.speech-bubble-card {
+  position: relative;
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.speech-bubble-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-teal);
+}
+
+.speech-bubble-card::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 36px;
+  width: 18px;
+  height: 18px;
+  background: var(--surface-white);
+  border-right: 1.5px solid var(--border-subtle);
+  border-bottom: 1.5px solid var(--border-subtle);
+  transform: rotate(45deg);
+}
+
+.bubble-tagline {
+  font-family: var(--font-title);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  margin-bottom: 8px;
+}
+
+.bubble-message {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  font-style: italic;
+  margin: 0;
+}
+
+.bubble-author-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 20px;
+}
+
+.bubble-initials-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--surface-mint);
+  color: var(--brand-teal);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.author-name {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.author-detail {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Cintillo Inferior de Acción ---------- */
+.webinar-bottom-banner {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #009245 0%, #0D6F5E 100%);
+  border-radius: var(--radius-pill);
+  padding: 18px 36px;
+  box-shadow: 0 12px 32px -6px rgba(0, 146, 69, 0.32);
+}
+
+.bottom-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bottom-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bottom-banner-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.bottom-banner-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.btn-webinar-ribbon-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-title);
+  font-size: 0.98rem;
+  font-weight: 800;
+  background: var(--brand-lime);
+  color: var(--brand-dark);
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s var(--ease-spring);
+  letter-spacing: 0.02em;
+}
+
+.btn-webinar-ribbon-cta:hover {
+  background: #9BD44F;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Responsivo para Webinar ---------- */
+@media (max-width: 991px) {
+  .section-webinar {
+    padding: 72px 0 80px;
+  }
+
+  .webinar-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .webinar-learn-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .situations-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .webinar-dual-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-bubbles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .webinar-bottom-banner {
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .bottom-banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bottom-banner-left {
+    flex-direction: column;
+  }
+
+  .btn-webinar-ribbon-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .webinar-topbar {
+    border-radius: var(--radius-lg);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .webinar-topbar-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .webinar-form-container {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .webinar-learn-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .situations-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .situations-container-card {
+    padding: 28px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .webinar-info-card {
+    padding: 26px 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .bonus-ribbon-tag {
+    position: static;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  .countdown-units-row {
+    gap: 6px;
+  }
+
+  .countdown-value {
+    font-size: 1.35rem;
+  }
+}
+
 /* ===================== PREFERS REDUCED MOTION ===================== */
 
 @media (prefers-reduced-motion: reduce) {
