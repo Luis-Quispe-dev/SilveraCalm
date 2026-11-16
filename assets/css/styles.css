@@ -522,6 +522,35 @@ ul, ol {
   gap: 12px;
 }
 
+.btn-header-webinar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #009245 0%, #0D6F5E 100%);
+  color: #ffffff !important;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(0, 146, 69, 0.32);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.btn-header-webinar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 146, 69, 0.45);
+  background: linear-gradient(135deg, #00A64E 0%, #0E7F6C 100%);
+  color: #ffffff !important;
+}
+
+.btn-header-webinar .badge-pulse-dot {
+  background-color: #8BC43F;
+  box-shadow: 0 0 0 0 rgba(139, 196, 63, 0.7);
+}
+
 .menu-toggle {
   background: transparent;
   border: 0;
