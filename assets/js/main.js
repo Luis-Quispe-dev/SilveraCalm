@@ -213,4 +213,226 @@
     observer.observe(compare);
   })();
 
+  /* ==========================================================
+     SISTEMA INTERACTIVO WEBINAR (CONTADOR + REGISTRO + CALENDAR)
+     ========================================================== */
+
+  /* ---------- 1. Contador Regresivo en Tiempo Real ---------- */
+  (function initWebinarCountdown() {
+    var daysEl = document.getElementById('countdownDays');
+    var hoursEl = document.getElementById('countdownHours');
+    var minutesEl = document.getElementById('countdownMinutes');
+    var secondsEl = document.getElementById('countdownSeconds');
+    var countdownBox = document.getElementById('webinarCountdown');
+
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    // Fecha objetivo: Sábado 28 de Noviembre de 2026, 10:00:00 AM (Hora de Lima / UTC-5)
+    var targetDate = new Date('2026-11-28T10:00:00-05:00').getTime();
+
+    function updateCountdown() {
+      var now = new Date().getTime();
+      var difference = targetDate - now;
+
+      if (difference <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        if (countdownBox) {
+          var label = countdownBox.querySelector('.countdown-heading span');
+          if (label) label.textContent = '¡El evento está en transmisión en vivo!';
+        }
+        return;
+      }
+
+      var d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((difference % (1000 * 60)) / 1000);
+
+      daysEl.textContent = d < 10 ? '0' + d : String(d);
+      hoursEl.textContent = h < 10 ? '0' + h : String(h);
+      minutesEl.textContent = m < 10 ? '0' + m : String(m);
+      secondsEl.textContent = s < 10 ? '0' + s : String(s);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  })();
+
+  /* ---------- 2. Formulario de Registro y Feedback Reactivo ---------- */
+  (function initWebinarRegistration() {
+    var form = document.getElementById('webinarRegistrationForm');
+    var formContainer = document.getElementById('webinarFormContainer');
+    var formState = document.getElementById('webinarFormState');
+    var successState = document.getElementById('webinarSuccessState');
+    var successUserName = document.getElementById('successUserName');
+    var successUserContact = document.getElementById('successUserContact');
+    var calendarLink = document.getElementById('webinarCalendarLink');
+    var resetBtn = document.getElementById('webinarResetBtn');
+    var ribbonCtaBtn = document.getElementById('webinarRibbonCtaBtn');
+
+    if (!form || !formState || !successState) return;
+
+    var nameInput = document.getElementById('webinarNombre');
+    var emailInput = document.getElementById('webinarEmail');
+    var phoneInput = document.getElementById('webinarCelular');
+
+    var nameError = document.getElementById('nameError');
+    var emailError = document.getElementById('emailError');
+    var phoneError = document.getElementById('phoneError');
+
+    var STORAGE_KEY = 'silveracalm_webinar_reg';
+
+    function setFieldError(input, errorEl, message) {
+      if (message) {
+        input.classList.add('is-invalid');
+        errorEl.textContent = message;
+      } else {
+        input.classList.remove('is-invalid');
+        errorEl.textContent = '';
+      }
+    }
+
+    function clearErrors() {
+      setFieldError(nameInput, nameError, '');
+      setFieldError(emailInput, emailError, '');
+      setFieldError(phoneInput, phoneError, '');
+    }
+
+    function generateCalendarUrl(name) {
+      var title = encodeURIComponent('Webinar SilveraCalm: Cuidado y Adherencia Médica en Adultos Mayores');
+      var details = encodeURIComponent('Hola ' + (name || 'familiar') + '! Tu acceso al webinar interactivo de SilveraCalm está listo. Aprenderemos estrategias para organizar las medicinas de tus padres con serenidad y sin invadir su intimidad.\n\nEnlace de transmisión: Se enviará 1 hora antes por WhatsApp y correo.');
+      var location = encodeURIComponent('Online vía Zoom / Google Meet');
+      // 28 Nov 2026, 10:00 a 10:45 AM Lima (15:00 a 15:45 UTC)
+      var dates = '20261128T150000Z/20261128T154500Z';
+      return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + dates + '&details=' + details + '&location=' + location;
+    }
+
+    function showSuccess(data, animate) {
+      formState.hidden = true;
+      successState.hidden = false;
+
+      var firstName = data.nombre.trim().split(' ')[0] || data.nombre;
+      if (successUserName) successUserName.textContent = firstName;
+      if (successUserContact) {
+        var cleanPhone = data.celular ? '+51 ' + data.celular : '';
+        successUserContact.textContent = data.email + (cleanPhone ? ' y ' + cleanPhone : '');
+      }
+
+      if (calendarLink) {
+        calendarLink.setAttribute('href', generateCalendarUrl(firstName));
+      }
+
+      if (animate && formContainer) {
+        formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function showForm() {
+      successState.hidden = true;
+      formState.hidden = false;
+      clearErrors();
+      if (nameInput) nameInput.focus();
+    }
+
+    // Auto-formateo del número de celular (solo dígitos y máximo 9)
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function (e) {
+        var val = this.value.replace(/\D/g, '');
+        if (val.length > 9) val = val.slice(0, 9);
+        this.value = val;
+      });
+    }
+
+    // Comprobación de registro previo en localStorage
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        var parsed = JSON.parse(saved);
+        if (parsed && parsed.nombre) {
+          showSuccess(parsed, false);
+        }
+      }
+    } catch (e) {
+      // Ignorar errores de localStorage en modo incógnito estricto
+    }
+
+    // Enviar formulario con validación comprensiva
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearErrors();
+
+      var isValid = true;
+      var nombre = nameInput ? nameInput.value.trim() : '';
+      var email = emailInput ? emailInput.value.trim() : '';
+      var celular = phoneInput ? phoneInput.value.trim() : '';
+
+      // Validación de Nombre
+      if (!nombre || nombre.length < 3) {
+        setFieldError(nameInput, nameError, 'Por favor, ingresa tu nombre completo (mínimo 3 letras).');
+        isValid = false;
+      }
+
+      // Validación de Email
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailPattern.test(email)) {
+        setFieldError(emailInput, emailError, 'Por favor, ingresa un correo electrónico válido.');
+        isValid = false;
+      }
+
+      // Validación de Celular (Perú: 9 dígitos comenzando por 9)
+      var cleanPhone = celular.replace(/\D/g, '');
+      if (!cleanPhone || cleanPhone.length !== 9 || cleanPhone.charAt(0) !== '9') {
+        setFieldError(phoneInput, phoneError, 'Ingresa un celular válido de Perú (9 dígitos, comenzando por 9).');
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      var regData = {
+        nombre: nombre,
+        email: email,
+        celular: cleanPhone,
+        registeredAt: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(regData));
+      } catch (err) {
+        // Fallback silencioso
+      }
+
+      showSuccess(regData, true);
+    });
+
+    // Botón para editar datos o registrar a otro familiar
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        showForm();
+      });
+    }
+
+    // Botón inferior "QUIERO PARTICIPAR": scroll fluido hacia el formulario
+    if (ribbonCtaBtn) {
+      ribbonCtaBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (formContainer) {
+          formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          formContainer.classList.add('is-highlighted');
+          setTimeout(function () {
+            formContainer.classList.remove('is-highlighted');
+          }, 1800);
+
+          if (!formState.hidden && nameInput) {
+            setTimeout(function () {
+              nameInput.focus();
+            }, 600);
+          }
+        }
+      });
+    }
+  })();
+
 })();

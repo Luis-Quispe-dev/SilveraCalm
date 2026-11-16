@@ -83,6 +83,31 @@
             }
           }
         ]
+      },
+      {
+        "@type": "Event",
+        "@id": "https://silveracalm.u20231b869.workers.dev/#webinar",
+        "name": "Webinar Gratuito: Cuidado y Adherencia Médica en Adultos Mayores",
+        "description": "Descubre cómo ayudar a tus padres a organizar sus medicinas y rutinas de salud con tranquilidad, sin discusiones y respetando su autonomía.",
+        "startDate": "2026-11-28T19:00:00-05:00",
+        "endDate": "2026-11-28T20:10:00-05:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "https://silveracalm.u20231b869.workers.dev/#webinar"
+        },
+        "organizer": {
+          "@id": "https://silveracalm.u20231b869.workers.dev/#org"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "PEN",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-01T00:00:00-05:00",
+          "url": "https://silveracalm.u20231b869.workers.dev/#webinar"
+        }
       }
     ]
   }
@@ -115,6 +140,7 @@
 
       <nav class="nav-desktop" aria-label="Principal">
         <a href="#beneficios">Beneficios</a>
+        <a href="#webinar" class="nav-link-webinar">Webinar <span class="nav-badge-free">Gratis</span></a>
         <a href="#como-funciona">¿Cómo funciona?</a>
         <a href="#historias">Historias</a>
         <a href="#blog">Blog</a>
@@ -134,6 +160,7 @@
 
     <nav class="nav-mobile" id="mobileMenu" aria-label="Menú móvil" hidden>
       <a href="#beneficios">Beneficios</a>
+      <a href="#webinar">Webinar gratuito (28 Nov)</a>
       <a href="#como-funciona">¿Cómo funciona?</a>
       <a href="#historias">Historias</a>
       <a href="#blog">Blog</a>
@@ -294,6 +321,534 @@
             <span class="feature-card-tag" style="color: var(--color-primary);">Cero culpa, cero sobrecarga</span>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= WEBINAR GRATUITO (CUIDADO Y ADHERENCIA MÉDICA) ================= -->
+    <section class="section section-webinar" id="webinar" aria-labelledby="webinar-title">
+      <!-- Decoración ambiental de resplandor orgánico -->
+      <div class="webinar-blobs-layer" aria-hidden="true">
+        <div class="webinar-blob webinar-blob--mint"></div>
+        <div class="webinar-blob webinar-blob--teal"></div>
+      </div>
+
+      <div class="container webinar-container">
+
+        <!-- Top Header Ribbon (Fiel al Flyer Oficial) -->
+        <div class="webinar-topbar" data-reveal>
+          <div class="webinar-topbar-left">
+            <span class="webinar-topic-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Cuidado y Adherencia Médica
+            </span>
+          </div>
+
+          <div class="webinar-topbar-center">
+            <div class="webinar-brand-pill">
+              <img src="assets/img/logo-silveracalm.png" alt="Silvio el búho" class="webinar-brand-logo" width="28" height="40" />
+              <span class="webinar-brand-text">SilveraCalm</span>
+            </div>
+          </div>
+
+          <div class="webinar-topbar-right">
+            <div class="webinar-date-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Sábado 28 Nov</span>
+            </div>
+            <span class="webinar-topbar-divider" aria-hidden="true">|</span>
+            <span class="webinar-free-tag">
+              <span class="badge-pulse-dot" aria-hidden="true"></span>
+              WEBINAR GRATUITO
+            </span>
+          </div>
+        </div>
+
+        <!-- ================= BLOQUE HERO DEL WEBINAR ================= -->
+        <div class="webinar-hero-grid">
+
+          <!-- Columna Izquierda: Mensaje + Contador + Fotografía Familiar -->
+          <div class="webinar-intro-col" data-reveal>
+            <div class="webinar-badge-row">
+              <span class="badge badge-secondary">
+                <span class="badge-pulse-dot" aria-hidden="true"></span>
+                Sábado 28 de Noviembre 07:00 PM (Lima)
+              </span>
+              <span class="webinar-urgency-pill">🔥 Cupos limitados por sala virtual</span>
+            </div>
+
+            <h2 id="webinar-title" class="webinar-headline">
+              Descubre cómo ayudar a tus padres a organizar sus <span class="text-highlight-green">medicinas y rutinas de salud</span>
+            </h2>
+
+            <p class="webinar-lead">
+              Este <strong>Sábado 28 de Noviembre a las 07:00 AM (hora Lima)</strong>, acompáñanos en una sesión práctica de 45 minutos pensada para hijas e hijos profesionales que cuidan a distancia en Lima. Aprende a prevenir olvidos involuntarios, reducir la ansiedad familiar y acompañarlos con calma, sin discusiones ni llamadas que interrumpan su día.
+            </p>
+
+            <!-- Contador Regresivo en Vivo -->
+            <div class="webinar-countdown-box" id="webinarCountdown" aria-label="Cuenta regresiva del webinar">
+              <div class="countdown-heading">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Sábado 28 de Noviembre · Cuenta regresiva:</span>
+              </div>
+              <div class="countdown-units-row" role="timer" aria-live="off">
+                <div class="countdown-card">
+                  <span class="countdown-value" id="countdownDays">--</span>
+                  <span class="countdown-label">Días</span>
+                </div>
+                <span class="countdown-separator" aria-hidden="true">:</span>
+                <div class="countdown-card">
+                  <span class="countdown-value" id="countdownHours">--</span>
+                  <span class="countdown-label">Horas</span>
+                </div>
+                <span class="countdown-separator" aria-hidden="true">:</span>
+                <div class="countdown-card">
+                  <span class="countdown-value" id="countdownMinutes">--</span>
+                  <span class="countdown-label">Min</span>
+                </div>
+                <span class="countdown-separator" aria-hidden="true">:</span>
+                <div class="countdown-card">
+                  <span class="countdown-value" id="countdownSeconds">--</span>
+                  <span class="countdown-label">Seg</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Marco de Fotografía Familiar Emocional y Cálida -->
+            <div class="webinar-photo-card">
+              <div class="webinar-photo-frame">
+                <img
+                  src="assets/img/webinar-familia.jpg"
+                  alt="Hija adulta y su padre mayor compartiendo un momento cálido de conversación en casa"
+                  class="webinar-family-img"
+                  width="720" height="420"
+                  loading="lazy"
+                  onerror="this.src='https://plus.unsplash.com/premium_photo-1681997294838-237215ac3fc8?auto=format&fit=crop&w=900&q=80'" />
+                
+                <div class="webinar-photo-floating-pill">
+                  <span class="badge-pulse-dot" aria-hidden="true"></span>
+                  <span>Sábado 28 Noviembre · 07:00 AM vía Zoom</span>
+                </div>
+              </div>
+              <div class="webinar-photo-caption">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Acompañar con amor, sin invadir su intimidad ni tratarlos como niños.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Tarjeta de Registro Interactivo -->
+          <div class="webinar-form-col" data-reveal data-reveal-delay="1">
+            <div class="webinar-form-container" id="webinarFormContainer">
+              
+              <!-- Estado 1: Formulario de Registro Activo -->
+              <div class="webinar-form-body" id="webinarFormState">
+                <div class="webinar-form-header">
+                  <div class="webinar-badge-free-callout">¡ACCESO 100% LIBRE! · SÁBADO 28 NOV</div>
+                  <h3 class="webinar-form-title">
+                    Reserva tu lugar <br><span class="text-free-accent">¡ES GRATIS!</span>
+                  </h3>
+                  <div class="webinar-form-date-banner">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span><strong>Sábado 28 de Noviembre</strong> · 07:00 AM (Hora Lima)</span>
+                  </div>
+                  <p class="webinar-form-subtitle">
+                    Ingresa tus datos para recibir el enlace exclusivo de acceso y los recursos en tu WhatsApp y correo:
+                  </p>
+                </div>
+
+                <form id="webinarRegistrationForm" class="webinar-registration-form" novalidate>
+                  
+                  <!-- Campo Nombre -->
+                  <div class="form-field-group">
+                    <label for="webinarNombre" class="form-field-label">
+                      <span>Nombre completo</span>
+                      <span class="form-required" aria-hidden="true">*</span>
+                    </label>
+                    <div class="form-input-wrapper">
+                      <svg class="form-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <input
+                        type="text"
+                        id="webinarNombre"
+                        name="nombre"
+                        class="form-field-input"
+                        placeholder="Ej. Mariana Paredes"
+                        required
+                        autocomplete="name" />
+                    </div>
+                    <span class="form-error-msg" id="nameError" aria-live="polite"></span>
+                  </div>
+
+                  <!-- Campo Correo -->
+                  <div class="form-field-group">
+                    <label for="webinarEmail" class="form-field-label">
+                      <span>Correo electrónico</span>
+                      <span class="form-required" aria-hidden="true">*</span>
+                    </label>
+                    <div class="form-input-wrapper">
+                      <svg class="form-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                      <input
+                        type="email"
+                        id="webinarEmail"
+                        name="email"
+                        class="form-field-input"
+                        placeholder="mariana@ejemplo.com"
+                        required
+                        autocomplete="email" />
+                    </div>
+                    <span class="form-error-msg" id="emailError" aria-live="polite"></span>
+                  </div>
+
+                  <!-- Campo Celular -->
+                  <div class="form-field-group">
+                    <label for="webinarCelular" class="form-field-label">
+                      <span>Celular / WhatsApp</span>
+                      <span class="form-required" aria-hidden="true">*</span>
+                    </label>
+                    <div class="form-input-wrapper form-input-with-prefix">
+                      <span class="form-phone-prefix" aria-hidden="true">🇵🇪 +51</span>
+                      <input
+                        type="tel"
+                        id="webinarCelular"
+                        name="celular"
+                        class="form-field-input form-field-input--prefixed"
+                        placeholder="987 654 321"
+                        inputmode="numeric"
+                        maxlength="11"
+                        required
+                        autocomplete="tel" />
+                    </div>
+                    <span class="form-error-msg" id="phoneError" aria-live="polite"></span>
+                  </div>
+
+                  <!-- Botón de Envío -->
+                  <button type="submit" class="btn btn-primary btn-block btn-webinar-submit" id="webinarSubmitBtn">
+                    <span>QUIERO REGISTRARME</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </button>
+
+                  <div class="webinar-form-guarantees">
+                    <div class="guarantee-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                      <span>100% privado · Sin spam · Enlace directo a tu WhatsApp y correo</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Estado 2: Confirmación Exitosa (Interactivo) -->
+              <div class="webinar-success-body" id="webinarSuccessState" hidden>
+                <div class="success-top-badge">
+                  <div class="success-icon-ring" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span class="success-pill">¡CUPO CONFIRMADO!</span>
+                </div>
+
+                <h3 class="success-headline">¡Nos vemos en el Webinar!</h3>
+                <p class="success-message">
+                  Hola <strong id="successUserName">Mariana</strong>, tu lugar para el taller virtual ya está asegurado.
+                </p>
+
+                <div class="success-event-summary">
+                  <div class="summary-line">
+                    <span class="summary-icon" aria-hidden="true">📅</span>
+                    <div>
+                      <strong>Fecha: Sábado 28 de Noviembre</strong>
+                      <small>07:00 PM – 08:10 PM (Hora Perú / GMT-5)</small>
+                    </div>
+                  </div>
+                  <div class="summary-line">
+                    <span class="summary-icon" aria-hidden="true">💻</span>
+                    <div>
+                      <strong>Modalidad: Virtual en Vivo</strong>
+                      <small>Transmisión interactiva vía Zoom</small>
+                    </div>
+                  </div>
+                  <div class="summary-line">
+                    <span class="summary-icon" aria-hidden="true">📩</span>
+                    <div>
+                      <strong>Acceso enviado a:</strong>
+                      <small id="successUserContact">tu correo y WhatsApp</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="success-actions-block">
+                  <a
+                    id="webinarCalendarLink"
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Webinar+SilveraCalm%3A+Cuidado+y+Adherencia+M%C3%A9dica&dates=20261128T150000Z%2F20261128T160000Z&details=Webinar+SilveraCalm%3A+C%C3%B3mo+ayudar+a+tus+padres+a+organizar+sus+medicinas+y+rutinas+de+salud.+Enlace+virtual+v%C3%ADa+Zoom.&location=Online+Zoom%2FMeet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline btn-block btn-add-calendar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Agregar a Google Calendar</span>
+                  </a>
+
+                  <button type="button" class="btn-link-edit" id="webinarResetBtn">
+                    ¿Deseas modificar tus datos o registrar a otro familiar?
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= EN ESTE WEBINAR APRENDERÁS ================= -->
+        <div class="webinar-learn-block" data-reveal>
+          <div class="webinar-learn-header">
+            <span class="eyebrow">Lo que te llevarás</span>
+            <h3 class="webinar-learn-title">En este webinar aprenderás:</h3>
+          </div>
+
+          <div class="webinar-learn-cards-grid">
+            <div class="learn-card">
+              <div class="learn-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <p class="learn-card-text">
+                <strong>Cómo identificar rutinas</strong> que afectan su bienestar físico y emocional.
+              </p>
+            </div>
+
+            <div class="learn-card">
+              <div class="learn-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <p class="learn-card-text">
+                <strong>Errores comunes</strong> de los familiares al gestionar medicamentos sin darse cuenta.
+              </p>
+            </div>
+
+            <div class="learn-card">
+              <div class="learn-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <p class="learn-card-text">
+                <strong>Estrategias para que tomen</strong> sus medicinas a tiempo y con total constancia.
+              </p>
+            </div>
+
+            <div class="learn-card">
+              <div class="learn-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <p class="learn-card-text">
+                <strong>Cómo mejorar la tranquilidad</strong> y el control del botiquín respetando su dignidad.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= ¿TE IDENTIFICAS CON ALGUNA DE ESTAS SITUACIONES? ================= -->
+        <div class="webinar-situations-section" data-reveal>
+          <div class="situations-container-card">
+            <header class="situations-card-header">
+              <span class="eyebrow text-teal">Realidad del cuidador</span>
+              <h3 class="situations-card-title">¿Te identificas con alguna de estas situaciones?</h3>
+              <p class="situations-card-subtitle">
+                Cuidar a distancia mientras trabajas genera una carga mental silenciosa. Reconocerla es el primer paso para sanarla:
+              </p>
+            </header>
+
+            <div class="situations-cards-grid">
+              
+              <!-- Situación 1: Olvidos de pastillas -->
+              <div class="situation-item">
+                <div class="situation-avatar-circle" aria-hidden="true">
+                  <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="30" fill="#E2F3E7" stroke="#D2E4DA" stroke-width="1.5"/>
+                    <circle cx="32" cy="24" r="8" fill="#148877" opacity="0.9"/>
+                    <path d="M18 48c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#009245" stroke-width="2.5" stroke-linecap="round"/>
+                    <rect x="36" y="28" width="16" height="8" rx="4" transform="rotate(-30 36 28)" fill="#8BC43F" stroke="#009245" stroke-width="1.5"/>
+                    <line x1="43" y1="24" x2="45" y2="30" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="48" cy="16" r="2.5" fill="#009245"/>
+                    <circle cx="42" cy="12" r="1.5" fill="#148877"/>
+                  </svg>
+                </div>
+                <h4 class="situation-item-title">Olvidos de pastillas</h4>
+                <p class="situation-item-desc">Dudas de si tomó la dosis del mediodía o si la confundió con otra.</p>
+              </div>
+
+              <!-- Situación 2: Dificultad con las dosis -->
+              <div class="situation-item">
+                <div class="situation-avatar-circle" aria-hidden="true">
+                  <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="30" fill="#E2F3E7" stroke="#D2E4DA" stroke-width="1.5"/>
+                    <rect x="20" y="22" width="14" height="24" rx="3" fill="#148877" opacity="0.85"/>
+                    <rect x="23" y="17" width="8" height="5" rx="1.5" fill="#0D6F5E"/>
+                    <line x1="27" y1="29" x2="27" y2="37" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="23" y1="33" x2="31" y2="33" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="43" cy="34" r="8" fill="#8BC43F" stroke="#009245" stroke-width="1.5"/>
+                    <line x1="43" y1="29" x2="43" y2="39" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h4 class="situation-item-title">Dificultad con las dosis</h4>
+                <p class="situation-item-desc">Miligramos cambiantes, horarios cruzados y recetas médicas confusas.</p>
+              </div>
+
+              <!-- Situación 3: Estrés y preocupación -->
+              <div class="situation-item">
+                <div class="situation-avatar-circle" aria-hidden="true">
+                  <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="30" fill="#E2F3E7" stroke="#D2E4DA" stroke-width="1.5"/>
+                    <circle cx="32" cy="24" r="8" fill="#0D6F5E"/>
+                    <path d="M19 48c0-7.18 5.82-13 13-13s13 5.82 13 13" stroke="#009245" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M44 20c1.6-1.6 3.8-1.6 5.4 0s1.6 3.8 0 5.4l-5.4 5.4-5.4-5.4c-1.6-1.6-1.6-3.8 0-5.4s3.8-1.6 5.4 0z" fill="#8BC43F"/>
+                    <path d="M18 26c-1.5-1.5-3-1.5-4 0s-1 3.5 0 4.5l3.5 3.5" stroke="#148877" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h4 class="situation-item-title">Estrés y preocupación</h4>
+                <p class="situation-item-desc">Estar en la oficina pensando si en casa todo estará marchando en orden.</p>
+              </div>
+
+              <!-- Situación 4: Citas desorganizadas -->
+              <div class="situation-item">
+                <div class="situation-avatar-circle" aria-hidden="true">
+                  <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="30" fill="#E2F3E7" stroke="#D2E4DA" stroke-width="1.5"/>
+                    <rect x="20" y="20" width="24" height="25" rx="4" fill="#FFFFFF" stroke="#009245" stroke-width="2"/>
+                    <line x1="20" y1="28" x2="44" y2="28" stroke="#009245" stroke-width="1.5"/>
+                    <line x1="26" y1="16" x2="26" y2="22" stroke="#148877" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="38" y1="16" x2="38" y2="22" stroke="#148877" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="27" cy="34" r="2" fill="#8BC43F"/>
+                    <circle cx="37" cy="34" r="2" fill="#148877"/>
+                    <circle cx="32" cy="39" r="2" fill="#009245"/>
+                  </svg>
+                </div>
+                <h4 class="situation-item-title">Citas desorganizadas</h4>
+                <p class="situation-item-desc">Recetas vencidas, compras a última hora y controles médicos que se cruzan.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= DUAL CARDS: ORGANIZADOR + BONUS GRATUITOS ================= -->
+        <div class="webinar-dual-cards-grid" data-reveal>
+          
+          <!-- Card Izquierda: ¿Quién organiza este webinar? -->
+          <div class="webinar-info-card organizer-card">
+            <span class="card-eyebrow-tag">Organizador oficial</span>
+            <h3 class="card-heading">¿Quién organiza este webinar?</h3>
+
+            <div class="organizer-brand-box">
+              <div class="organizer-avatar-wrap">
+                <img src="assets/img/logo-silveracalm.png" alt="Silvio el búho - SilveraCalm" class="organizer-avatar-img" width="56" height="80" />
+              </div>
+              <div class="organizer-text-info">
+                <h4 class="organizer-name">SilveraCalm</h4>
+                <p class="organizer-category">Cuidado y Adherencia Médica en el Hogar</p>
+                <div class="organizer-pill-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Plataforma AgeTech · Lima, Perú</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="organizer-bio-text">
+              SilveraCalm acompaña a familias limeñas con telemetría pasiva y educación cálida. Nuestra misión es devolver la tranquilidad a los hijos que cuidan mientras trabajan, facilitando la toma de medicamentos sin invadir la privacidad ni vulnerar la independencia de los padres.
+            </p>
+          </div>
+
+          <!-- Card Derecha: BONUS GRATUITOS -->
+          <div class="webinar-info-card bonus-card">
+            <div class="bonus-ribbon-tag">
+              <span class="badge-pulse-dot" aria-hidden="true"></span>
+              100% LIBRE DE COSTO
+            </div>
+            <h3 class="card-heading text-brand-green">BONUS GRATUITOS</h3>
+            <p class="bonus-card-desc">Al asistir a la sesión en vivo recibirás directamente en tu bandeja:</p>
+
+            <ul class="bonus-checklist-group" aria-label="Lista de bonus del webinar">
+              <li class="bonus-checklist-item">
+                <span class="bonus-check-badge" aria-hidden="true">✓</span>
+                <div class="bonus-checklist-text">
+                  <strong>Test de Adherencia Médica</strong>
+                  <p>Herramienta clínica para detectar a tiempo omisiones de dosis.</p>
+                </div>
+              </li>
+              <li class="bonus-checklist-item">
+                <span class="bonus-check-badge" aria-hidden="true">✓</span>
+                <div class="bonus-checklist-text">
+                  <strong>Diagnóstico Inicial Personalizado</strong>
+                  <p>Semáforo de sobrecarga del cuidador con pautas para su rutina.</p>
+                </div>
+              </li>
+              <li class="bonus-checklist-item">
+                <span class="bonus-check-badge" aria-hidden="true">✓</span>
+                <div class="bonus-checklist-text">
+                  <strong>Guía práctica de cuidado y botiquín</strong>
+                  <p>Protocolo descargable en PDF para organizar tomas sin fricciones.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- ================= LO QUE DICEN OTROS FAMILIARES ================= -->
+        <div class="webinar-feedback-section" data-reveal>
+          <div class="feedback-heading-box">
+            <span class="eyebrow">Comunidad y Confianza</span>
+            <h3 class="feedback-title">Lo que dicen otros familiares</h3>
+          </div>
+
+          <div class="feedback-bubbles-grid">
+            
+            <div class="speech-bubble-wrapper">
+              <div class="speech-bubble-card">
+                <div class="bubble-tagline">«¡Por fin tengo paz mental!»</div>
+                <p class="bubble-message">
+                  «Antes vivía angustiada en el trabajo llamando 3 veces al día para ver si mi papá había tomado su losartán. Con las estrategias del webinar aprendimos a coordinar sus tomas con calma y sin discusiones.»
+                </p>
+              </div>
+              <div class="bubble-author-info">
+                <div class="bubble-initials-avatar" aria-hidden="true">MR</div>
+                <div class="bubble-meta">
+                  <strong class="author-name">Marisela R.</strong>
+                  <span class="author-detail">Cuida a su papá Carlos (75 años) · San Borja</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="speech-bubble-wrapper">
+              <div class="speech-bubble-card">
+                <div class="bubble-tagline">«Es de gran ayuda para mi papá»</div>
+                <p class="bubble-message">
+                  «Mi papá rechazaba cualquier ayuda porque pensaba que dudábamos de sus capacidades. Las pautas que nos compartieron nos permitieron apoyarlo respetando su dignidad. Fue un respiro inmenso para toda la familia.»
+                </p>
+              </div>
+              <div class="bubble-author-info">
+                <div class="bubble-initials-avatar" aria-hidden="true">FG</div>
+                <div class="bubble-meta">
+                  <strong class="author-name">Fernando G.</strong>
+                  <span class="author-detail">Cuida a su mamá Yolanda (72 años) · Miraflores</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= CINTILLO INFERIOR DE ACCIÓN ================= -->
+        <div class="webinar-bottom-banner" data-reveal>
+          <div class="bottom-banner-content">
+            <div class="bottom-banner-left">
+              <div class="bottom-banner-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </div>
+              <h3 class="bottom-banner-title">Tu familia merece tranquilidad en su salud</h3>
+            </div>
+            
+            <a href="#webinarFormContainer" class="btn btn-webinar-ribbon-cta" id="webinarRibbonCtaBtn">
+              <span>QUIERO PARTICIPAR</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
