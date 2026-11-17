@@ -1,0 +1,857 @@
+/* =========================================================
+   SilveraCalm — Planes y Precios (planes.css)
+   Estilos específicos para planes.html.
+   Extiende el sistema base de styles.css sin duplicar tokens.
+   ========================================================= */
+
+/* Indicador de página activa en el menú */
+.nav-desktop a.nav-link-active {
+  color: var(--brand-primary);
+}
+
+.nav-desktop a.nav-link-active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* =========================================================
+   1. HERO DE PLANES
+   ========================================================= */
+.planes-hero {
+  position: relative;
+  padding: 56px 0 64px;
+  background-color: var(--bg-global);
+  overflow: hidden;
+}
+
+.planes-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.planes-hero-visual {
+  position: relative;
+}
+
+.planes-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--surface-white);
+}
+
+.planes-photo-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+.planes-photo-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(24, 30, 25, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.planes-photo-badge img {
+  width: 26px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.planes-photo-badge-text {
+  font-family: var(--font-title);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.planes-hero-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.planes-hero-copy h1 {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin: 12px 0 16px;
+}
+
+.planes-hero-lead {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin-bottom: 28px;
+}
+
+/* 4 Iconos de beneficios bajo el hero */
+.planes-benefits-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.planes-benefit-pill {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s var(--ease-spring), border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.planes-benefit-pill:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.benefit-pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-pill-label {
+  font-family: var(--font-title);
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+/* =========================================================
+   2. SECCIÓN Y REJILLA DE PLANES (4 COLUMNAS EN ESCRITORIO)
+   ========================================================= */
+.section-pricing {
+  background-color: #ffffff;
+  padding: 80px 0 88px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 40px;
+}
+
+.pricing-card {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--brand-teal);
+}
+
+/* Tarjeta destacada PRO (Recomendada) */
+.pricing-card--highlight {
+  border: 2px solid var(--brand-primary);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5FAF7 100%);
+  box-shadow: 0 12px 30px -4px rgba(0, 146, 69, 0.16);
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.pricing-card--highlight:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 18px 40px -6px rgba(0, 146, 69, 0.24);
+}
+
+.pricing-highlight-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #009245 0%, #007A31 100%);
+  color: #ffffff;
+  font-family: var(--font-title);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(0, 146, 69, 0.3);
+  white-space: nowrap;
+}
+
+.pricing-card-top {
+  margin-bottom: 20px;
+}
+
+.pricing-tier-tag {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-teal);
+  background: var(--surface-mint);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.pricing-tier-name {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-main);
+  margin: 0 0 4px;
+  letter-spacing: -0.015em;
+}
+
+.pricing-tier-subtitle {
+  font-family: var(--font-title);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin: 0 0 16px;
+}
+
+.pricing-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 18px;
+}
+
+.pricing-amount {
+  font-family: var(--font-title);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.pricing-tier-included-tag {
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--brand-teal);
+  background: #E8F5EE;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pricing-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pricing-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.feature-check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-card-action {
+  margin-top: auto;
+}
+
+/* =========================================================
+   3. FRANJA DE GARANTÍAS
+   ========================================================= */
+.guarantees-banner {
+  background: var(--bg-global);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.guarantee-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.guarantee-item-content strong {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.guarantee-item-content span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   4. ¿QUÉ PUEDES HACER CON SILVERACALM? (CON MOCKUP DE CELULAR)
+   ========================================================= */
+.section-features-showcase {
+  background-color: var(--bg-global);
+  padding: 88px 0 92px;
+}
+
+.features-showcase-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Mockup de celular en HTML/CSS */
+.phone-mockup-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.phone-mockup {
+  width: 290px;
+  height: 520px;
+  background: #181E19;
+  border-radius: 42px;
+  padding: 12px;
+  box-shadow: 0 24px 50px -10px rgba(13, 111, 94, 0.28), 0 0 0 2px #2C352E;
+  position: relative;
+}
+
+.phone-speaker-notch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 14px;
+  background: #181E19;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #F3F7F5;
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px 16px;
+  font-family: var(--font-body);
+}
+
+.phone-screen-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 14px;
+}
+
+.phone-screen-header img {
+  width: 24px;
+  height: auto;
+}
+
+.phone-screen-title {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+}
+
+.phone-card-alert {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1.5px solid var(--border-subtle);
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-xs);
+}
+
+.phone-card-tag {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0D6F5E;
+  background: var(--surface-mint);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 6px;
+}
+
+.phone-card-title {
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.phone-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.phone-botiquin-status {
+  background: #E2F3E7;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.phone-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+.phone-status-text {
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0D6F5E;
+  line-height: 1.25;
+}
+
+/* 4 Tarjetas de capacidades */
+.features-cards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feature-capability-card {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s var(--ease-spring), border-color 0.25s ease;
+}
+
+.feature-capability-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.capability-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.feature-capability-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.feature-capability-card p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.48;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* =========================================================
+   5. COMPROMISOS Y TESTIMONIO ILUSTRATIVO
+   ========================================================= */
+.commitments-showcase {
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.commitments-items-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.commitment-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.commitment-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-mint);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.commitment-row strong {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.commitment-row span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.illustrative-card {
+  background: #F8FAF9;
+  border-left: 3.5px solid var(--brand-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 20px 22px;
+}
+
+.illustrative-quote {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-style: italic;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+
+.illustrative-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name-tag {
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.author-badge-tag {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--brand-teal);
+  font-weight: 700;
+}
+
+/* =========================================================
+   6. BLOQUE DE CIERRE (APP CTA CON PRÓXIMAMENTE)
+   ========================================================= */
+.section-app-cta {
+  background: linear-gradient(135deg, #009245 0%, #0D6F5E 100%);
+  color: #ffffff;
+  padding: 64px 0;
+}
+
+.app-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.app-cta-copy {
+  max-width: 600px;
+}
+
+.app-cta-copy h2 {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.app-cta-copy p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.store-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.store-badge-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(24, 30, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: not-allowed;
+  position: relative;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.store-badge-card:hover {
+  background: rgba(24, 30, 25, 0.95);
+  transform: translateY(-2px);
+}
+
+.store-badge-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.store-badge-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-badge-status {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-lime);
+  font-weight: 700;
+}
+
+.store-badge-platform {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVO (390px, 768px, 1440px)
+   ========================================================= */
+
+@media (max-width: 1199px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .guarantees-banner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .commitments-showcase {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .planes-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .features-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .phone-mockup-wrapper {
+    order: 2;
+  }
+
+  .features-cards-list {
+    order: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .planes-hero {
+    padding: 36px 0 44px;
+  }
+
+  .planes-benefits-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-card--highlight {
+    transform: none;
+  }
+
+  .pricing-card--highlight:hover {
+    transform: translateY(-3px);
+  }
+
+  .guarantees-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .features-cards-list {
+    grid-template-columns: 1fr;
+  }
+
+  .commitments-showcase {
+    padding: 24px 20px;
+  }
+
+  .app-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .store-buttons-group {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .store-badge-card {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card,
+  .pricing-card--highlight,
+  .planes-benefit-pill,
+  .feature-capability-card,
+  .store-badge-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
