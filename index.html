@@ -48,43 +48,6 @@
         "publisher": { "@id": "https://silveracalm.u20231b869.workers.dev/#org" }
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿El test tiene algún costo o compromiso?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, es 100% gratuito. Su propósito es orientarte, evaluar el nivel de sobrecarga que experimentas como cuidador o cuidadora, y brindarte herramientas inmediatas sin cobros ocultos."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Implica instalar cámaras en casa de mi papá?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nunca. En SilveraCalm defendemos la autonomía de los adultos mayores. Empleamos telemetría pasiva: un sensor discreto en su botiquín registra de manera silenciosa las aperturas sin invadir su intimidad ni vigilarlo."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Mi papá no se lleva bien con la tecnología, ¿igual funciona?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Por supuesto. Tu padre no tiene que interactuar con pantallas, instalar aplicaciones ni presionar botones complejos. Sigue su rutina diaria abriendo su botiquín habitual como siempre lo ha hecho."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Qué pasa si se cae la conexión de internet en su casa?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "El dispositivo almacena los registros de manera local y encriptada en su memoria interna, y se sincroniza automáticamente con tu aplicación tan pronto se reanuda la conexión."
-            }
-          }
-        ]
-      },
-      {
         "@type": "Event",
         "@id": "https://silveracalm.u20231b869.workers.dev/#webinar",
         "name": "Webinar Gratuito: Cuidado y Adherencia Médica en Adultos Mayores",
@@ -123,12 +86,28 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/chat.css" />
 </head>
-<body>
+<body class="sc-landing">
 
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- ================= HEADER ================= -->
   <header class="site-header" id="top">
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <span class="top-bar-note">Cuidado y tranquilidad para tu familia</span>
+        <div class="top-bar-social" aria-label="Redes sociales de SilveraCalm">
+          <span class="top-bar-label">Síguenos:</span>
+          <a href="https://www.tiktok.com/@silveracalmcontigo1" class="social-pill-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok de SilveraCalm">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.87a8.16 8.16 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.3z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a href="https://www.youtube.com/@SilveraCalmContigo" class="social-pill-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube de SilveraCalm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
     <div class="container header-inner">
       <a href="#hero" class="brand" aria-label="SilveraCalm, ir al inicio">
         <img src="assets/img/logo-silveracalm.png" alt="" class="brand-logo" width="40" height="58" />
@@ -139,21 +118,17 @@
       </a>
 
       <nav class="nav-desktop" aria-label="Principal">
-        <a href="#beneficios">Beneficios</a>
-        <a href="#como-funciona">Utilidad</a>
+        <a href="#top" class="nav-link-active" aria-current="page">Inicio</a>
+        <a href="#" class="nav-link-featured" data-test-cta>Test de Tranquilidad Familiar <span class="nav-badge-free">Gratis</span></a>
+        <a href="blog.html">Blog</a>
+        <a href="webinar.html">Webinar</a>
         <a href="planes.html">Planes</a>
-        <a href="#historias">Historias</a>
-        <a href="#blog">Blog</a>
-        <a href="#faq">Preguntas</a>
       </nav>
 
       <div class="header-actions">
-        <a href="#" class="btn btn-header-download hide-mobile">
+        <a href="#" class="btn btn-primary btn-header-download is-primary hide-mobile" data-download-cta>
           <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Descargar</span>
-        </a>
-        <a href="webinar.html" class="btn btn-primary btn-sm btn-header-webinar hide-mobile">
-          <span class="badge-pulse-dot" aria-hidden="true"></span> Webinar <span class="btn-arrow" aria-hidden="true">→</span>
+          <span>Descargar App</span>
         </a>
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
           <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -163,19 +138,15 @@
     </div>
 
     <nav class="nav-mobile" id="mobileMenu" aria-label="Menú móvil" hidden>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#como-funciona">Utilidad</a>
+      <a href="#top" class="nav-link-active" aria-current="page">Inicio</a>
+      <a href="#" class="nav-link-featured" data-test-cta>Test de Tranquilidad Familiar <span class="nav-badge-free">Gratis</span></a>
+      <a href="blog.html">Blog</a>
+      <a href="webinar.html">Webinar</a>
       <a href="planes.html">Planes</a>
-      <a href="#historias">Historias</a>
-      <a href="#blog">Blog</a>
-      <a href="#faq">Preguntas</a>
       <div class="nav-mobile-actions">
-        <a href="#" class="btn btn-header-download btn-block">
+        <a href="#" class="btn btn-primary btn-block btn-header-download is-primary" data-download-cta>
           <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Descargar</span>
-        </a>
-        <a href="webinar.html" class="btn btn-primary btn-block btn-header-webinar">
-          <span class="badge-pulse-dot" aria-hidden="true"></span> Webinar <span class="btn-arrow" aria-hidden="true">→</span>
+          <span>Descargar App</span>
         </a>
       </div>
     </nav>
@@ -183,402 +154,689 @@
 
   <main id="contenido">
 
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="hero">
-      <!-- Capas de resplandor orgánico etéreo -->
-      <div class="hero-blobs-layer" aria-hidden="true">
-        <div class="hero-blob hero-blob--salvia"></div>
-        <div class="hero-blob hero-blob--lavanda"></div>
-      </div>
+    <!-- ================= 1. PRESENTACIÓN DEL PROYECTO (HERO + LOGO MONUMENTAL + ANTES Y DESPUÉS) ================= -->
+    <section class="sc-hero" id="proyecto">
+      <div class="container">
+        <div class="sc-hero-grid">
+          <div class="sc-hero-copy">
+            <p class="sc-context-line">Presentación del proyecto</p>
 
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="badge badge-secondary">
-            <span class="badge-pulse-dot" aria-hidden="true"></span>
-            Test de Tranquilidad Familiar · 2 min
-          </span>
+            <h1>Acompaña la salud de tus padres sin invadir su privacidad</h1>
 
-          <h1>
-            Cuidar a quien te cuidó <span class="text-primary-soft">no tiene por qué costar tu paz mental</span> ni su dignidad
-          </h1>
+            <p class="sc-lead">
+              SilveraCalm es una plataforma AgeTech diseñada para hijas e hijos cuidadores de 35 a 50 años. Mediante un sensor discreto en el botiquín habitual —sin cámaras ni alarmas invasivas—, confirma de forma silenciosa la toma diaria de medicamentos para que trabajes con tranquilidad y tu padre conserve su autonomía.
+            </p>
 
-          <p class="lead">
-            Responde un test gratuito de 2 minutos y recibe un diagnóstico del riesgo de omisión médica de tu papá, con recomendaciones para acompañarlo según su rutina y tu jornada laboral.
-          </p>
+            <ul class="sc-guarantees" aria-label="Pilares del proyecto">
+              <li>Cero cámaras ni vigilancia</li>
+              <li>Sensor discreto en el botiquín</li>
+              <li>Enfoque geriátrico y familiar</li>
+            </ul>
 
-          <div class="hero-actions">
-            <a href="#" class="btn btn-primary btn-lg" data-test-cta>
-              Hacer el test gratuito <span class="btn-arrow" aria-hidden="true">→</span>
-            </a>
-            <a href="#como-funciona" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
+            <div class="sc-hero-human-strip">
+              <div class="sc-hero-avatars" aria-hidden="true">
+                <img src="assets/img/scenes/adulto-mayor-autonomo.jpg" alt="" width="44" height="44" />
+                <img src="assets/img/scenes/cuidador-tranquilidad-laboral.jpg" alt="" width="44" height="44" />
+                <img src="assets/img/scenes/vinculo-familiar-sereno.jpg" alt="" width="44" height="44" />
+              </div>
+              <p>Diseñado para familias reales en Lima que cuidan a distancia con serenidad y respeto.</p>
+            </div>
           </div>
 
-          <ul class="trust-pills" aria-label="Garantías">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              100% confidencial
+          <div class="sc-silvio-stage" aria-label="Silvio, mascota e identidad visual de SilveraCalm">
+            <div class="sc-silvio-aura" aria-hidden="true">
+              <span class="sc-silvio-ring sc-silvio-ring--outer"></span>
+              <span class="sc-silvio-ring sc-silvio-ring--inner"></span>
+              <span class="sc-silvio-halo"></span>
+            </div>
+
+            <div class="sc-silvio-pill sc-silvio-pill--top">
+              <span class="sc-silvio-dot" aria-hidden="true"></span>
+              <span>Botiquín · Señal silenciosa</span>
+            </div>
+
+            <div class="sc-silvio-figure">
+              <img
+                src="assets/img/silvio/silvio-saludo.png"
+                alt="Silvio, búho mascota de SilveraCalm saludando con su insignia de cuidado"
+                class="sc-silvio-hero-img"
+                width="360"
+                height="313"
+              />
+              <div class="sc-silvio-pedestal" aria-hidden="true"></div>
+            </div>
+
+            <div class="sc-silvio-pill sc-silvio-pill--bottom">
+              <strong>SilveraCalm</strong>
+              <span>«Cuidando a quienes cuidan»</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sc-exec-strip" aria-label="Resumen ejecutivo de SilveraCalm">
+          <div class="sc-exec-strip-title">
+            <img
+              src="assets/img/silvio/silvio-guia.png"
+              alt="Silvio señalando el resumen ejecutivo del proyecto"
+              class="sc-exec-mascot"
+              width="86"
+              height="105"
+            />
+            <div>
+              <h2>Resumen ejecutivo</h2>
+              <p>Síntesis del proyecto</p>
+            </div>
+          </div>
+          <dl class="sc-exec-strip-grid">
+            <div class="sc-exec-item">
+              <dt>Problema que resuelve</dt>
+              <dd>La tensión familiar por llamadas de control constantes y el temor a que el adulto mayor olvide sus dosis diarias.</dd>
+            </div>
+            <div class="sc-exec-item">
+              <dt>Solución tecnológica</dt>
+              <dd>Telemetría pasiva en el botiquín, asistente IA Silvio, digitalización de recetas (OCR) y comunidad SilverCaretakers.</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <!-- Sub-bloque integrado: Ejemplo Antes y Después -->
+        <div class="sc-hero-ba" id="antes-despues" data-reveal>
+          <header class="sc-ba-head">
+            <h2>Un día real: Antes y después de SilveraCalm</h2>
+            <p>Elige un momento del día para ver cómo cambia la rutina familiar cuando reemplazas las llamadas de control por acompañamiento silencioso.</p>
+          </header>
+
+          <div class="sc-ba-tabs" role="tablist" aria-label="Momentos del día para comparar antes y después">
+            <button type="button" class="sc-ba-tab is-active" role="tab" aria-selected="true" data-ba-tab="morning">
+              8:15 a. m. · Hora de la pastilla
+            </button>
+            <button type="button" class="sc-ba-tab" role="tab" aria-selected="false" data-ba-tab="afternoon">
+              2:30 p. m. · En el trabajo
+            </button>
+            <button type="button" class="sc-ba-tab" role="tab" aria-selected="false" data-ba-tab="night">
+              7:30 p. m. · Llamada familiar
+            </button>
+          </div>
+
+          <div class="sc-ba-grid">
+            <article class="sc-ba-card sc-ba-card--before" aria-live="polite">
+              <div class="sc-ba-card-top">
+                <span class="sc-ba-badge sc-ba-badge--before">Antes · Sin SilveraCalm</span>
+                <span class="sc-ba-time" id="baBeforeTime">8:15 a. m.</span>
+              </div>
+
+              <div class="sc-ba-mock sc-ba-mock--before">
+                <div class="sc-ba-mock-title" id="baBeforeEvent">Llamada saliente: «Papá» · 3er intento sin respuesta</div>
+                <p class="sc-ba-mock-quote" id="baBeforeQuote">«¡Papá! ¿Ya tomaste la pastilla de la presión? Te llamo porque me preocupo.»</p>
+              </div>
+
+              <ul class="sc-ba-outcomes">
+                <li>
+                  <strong>Cómo se siente tu padre:</strong>
+                  <span id="baBeforeParent">Incómodo o regañado, como si perdiera su independencia.</span>
+                </li>
+                <li>
+                  <strong>Cómo sigue tu día:</strong>
+                  <span id="baBeforeChild">Sales de tu reunión con estrés, culpa y dudas de si realmente la tomó.</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="sc-ba-card sc-ba-card--after" aria-live="polite">
+              <div class="sc-ba-card-top">
+                <span class="sc-ba-badge sc-ba-badge--after">Después · Con SilveraCalm</span>
+                <span class="sc-ba-time" id="baAfterTime">8:14 a. m.</span>
+              </div>
+
+              <div class="sc-ba-mock sc-ba-mock--after">
+                <div class="sc-ba-mock-brand">
+                  <img src="assets/img/silvio/silvio-app.png" alt="" width="34" height="45" aria-hidden="true" />
+                  <span class="sc-ba-mock-title" id="baAfterEvent">Silvio · Botiquín abierto a tiempo</span>
+                </div>
+                <p class="sc-ba-mock-quote" id="baAfterQuote">«Tu papá abrió su botiquín en su horario habitual. Todo en orden, no necesitas llamarlo.»</p>
+              </div>
+
+              <ul class="sc-ba-outcomes">
+                <li>
+                  <strong>Cómo se siente tu padre:</strong>
+                  <span id="baAfterParent">Respetado y autónomo, sin cámaras ni recordatorios invasivos en casa.</span>
+                </li>
+                <li>
+                  <strong>Cómo sigue tu día:</strong>
+                  <span id="baAfterChild">Trabajas enfocado y tranquilo sabiendo que su tratamiento va al día.</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. PROPUESTA DE VALOR INNOVADORA ================= -->
+    <section class="section section-white" id="propuesta-valor">
+      <div class="container">
+        <div class="sc-vp-head-split" data-reveal>
+          <header class="sc-section-head sc-section-head--flush">
+            <h2>Propuesta de valor innovadora</h2>
+            <p>Pasamos de la vigilancia que incomoda al acompañamiento silencioso que respeta la dignidad del adulto mayor.</p>
+          </header>
+
+          <aside class="sc-mascot-callout" aria-label="Mensaje de Silvio sobre la propuesta de valor">
+            <img
+              src="assets/img/silvio/silvio-app.png"
+              alt="Silvio revisando el seguimiento tranquilo desde el celular"
+              class="sc-mascot-callout-img"
+              width="104"
+              height="137"
+              loading="lazy"
+            />
+            <div class="sc-mascot-callout-bubble">
+              <strong>Silvio te acompaña</strong>
+              <p>Confirmaciones claras y sin interrupciones, pensadas para que tú y tu padre lean todo sin esfuerzo.</p>
+            </div>
+          </aside>
+        </div>
+
+        <article class="sc-vp-manifesto" aria-label="Declaración de propuesta de valor" data-reveal>
+          <blockquote class="sc-vp-quote">
+            «Un ecosistema digital comunitario P2P potenciado por alertas cruzadas inteligentes y telemetría no invasiva que conecta a hijos cuidadores para compartir experiencias, seguimiento y soporte en la adherencia médica, personalizando recordatorios respetuosos según los horarios del adulto mayor y del cuidador, para reducir su sobrecarga mental y ayudarles a alcanzar tranquilidad laboral y un cuidado digno y seguro.»
+          </blockquote>
+          <div class="sc-vp-anatomy">
+            <div class="sc-vp-node">
+              <strong>Ecosistema P2P</strong>
+              <span>Hijos cuidadores conectados para compartir experiencias y soporte mutuo.</span>
+            </div>
+            <div class="sc-vp-node">
+              <strong>Telemetría no invasiva</strong>
+              <span>Alertas cruzadas inteligentes y seguimiento médico sin cámaras ni invasión.</span>
+            </div>
+            <div class="sc-vp-node">
+              <strong>Horarios respetuosos</strong>
+              <span>Recordatorios adaptados a la rutina del adulto mayor y tu jornada laboral.</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="sc-human-mosaic" aria-label="Escenas reales de acompañamiento familiar" data-reveal>
+          <figure class="sc-mosaic-card sc-mosaic-card--lead">
+            <img
+              src="assets/img/scenes/adulto-mayor-autonomo.jpg"
+              alt="Adulto mayor independiente tomando su desayuno en casa con serenidad"
+              loading="lazy"
+            />
+            <figcaption class="sc-mosaic-caption">
+              <strong>Autonomía en casa</strong>
+              <span>Tu padre mantiene su rutina matutina sin cámaras ni interrupciones.</span>
+            </figcaption>
+          </figure>
+
+          <div class="sc-mosaic-stack">
+            <figure class="sc-mosaic-card">
+              <img
+                src="assets/img/scenes/cuidador-tranquilidad-laboral.jpg"
+                alt="Hija cuidadora trabajando tranquila en su oficina mientras consulta su celular"
+                loading="lazy"
+              />
+              <figcaption class="sc-mosaic-caption">
+                <strong>Tranquilidad laboral</strong>
+                <span>Confirmación silenciosa mientras avanzas en tu jornada.</span>
+              </figcaption>
+            </figure>
+
+            <figure class="sc-mosaic-card">
+              <img
+                src="assets/img/scenes/comunidad-cuidadores.jpg"
+                alt="Grupo de hijos cuidadores compartiendo experiencias en comunidad"
+                loading="lazy"
+              />
+              <figcaption class="sc-mosaic-caption">
+                <strong>Comunidad SilverCaretakers</strong>
+                <span>Experiencias reales y soporte mutuo entre cuidadores.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="sc-compare-grid" data-reveal>
+          <article class="sc-compare-panel sc-compare-panel--old">
+            <h3>Control tradicional</h3>
+            <ul>
+              <li>Llamadas insistentes en horario laboral que interrumpen su rutina y generan discusiones.</li>
+              <li>Cámaras en casa que vulneran su intimidad y lo hacen sentir vigilado.</li>
+              <li>Recetas en papel dispersas y sobrecarga emocional para quien cuida.</li>
+            </ul>
+          </article>
+
+          <article class="sc-compare-panel sc-compare-panel--new">
+            <h3>Acompañamiento SilveraCalm</h3>
+            <ul>
+              <li>Confirmación silenciosa en tu celular cuando abre su botiquín habitual, sin timbrazos.</li>
+              <li>Sensor pasivo sin lentes ni micrófonos: preserva por completo su privacidad y autonomía.</li>
+              <li>Asistente IA Silvio con lectura de recetas (OCR) y soporte en la comunidad SilverCaretakers.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="sc-pillars-showcase" data-reveal>
+          <div class="sc-pillars-intro">
+            <h3>Lo que ofrecemos para lograrlo</h3>
+            <p>Cuatro piezas integradas que convierten la preocupación diaria en tranquilidad compartida.</p>
+          </div>
+
+          <div class="sc-pillars-strip">
+            <article class="sc-pillar sc-pillar--sensor">
+              <div class="sc-pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="3" width="16" height="18" rx="3"/>
+                  <path d="M9 8h6M12 5v6"/>
+                  <path d="M8 16h8"/>
+                  <circle cx="17" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <div class="sc-pillar-body">
+                <h4>Botiquín inteligente</h4>
+                <p>Sensor discreto que registra la apertura habitual sin cambiar las costumbres de tu padre.</p>
+              </div>
+              <span class="sc-pillar-meta">Cero cámaras · Cero fricción</span>
+            </article>
+
+            <article class="sc-pillar sc-pillar--silvio">
+              <div class="sc-pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/>
+                  <path d="M8 12h8M8 15.5h5"/>
+                  <path d="M12 8.5V8"/>
+                </svg>
+              </div>
+              <div class="sc-pillar-body">
+                <h4>Asistente IA Silvio</h4>
+                <p>Digitaliza recetas médicas con OCR y ofrece orientación empática ante dudas cotidianas.</p>
+              </div>
+              <span class="sc-pillar-meta">Lectura OCR · Guía 24/7</span>
+            </article>
+
+            <article class="sc-pillar sc-pillar--community">
+              <div class="sc-pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8" cy="8" r="3"/>
+                  <circle cx="16" cy="8" r="3"/>
+                  <path d="M3 19c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+                  <path d="M11 19c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+                </svg>
+              </div>
+              <div class="sc-pillar-body">
+                <h4>SilverCaretakers</h4>
+                <p>Red de apoyo entre hijas e hijos cuidadores para compartir aprendizajes y aliviar la carga.</p>
+              </div>
+              <span class="sc-pillar-meta">Comunidad P2P · Soporte mutuo</span>
+            </article>
+
+            <article class="sc-pillar sc-pillar--plans">
+              <div class="sc-pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l7 3.5v5.5c0 4.5-3 8.2-7 9.5-4-1.3-7-5-7-9.5V6.5L12 3z"/>
+                  <path d="M9.5 12l2 2 3.5-4"/>
+                </svg>
+              </div>
+              <div class="sc-pillar-body">
+                <h4>Planes flexibles</h4>
+                <p>Desde «Inicio Tranquilo» (Gratis) hasta SMART, PRO y ELITE según el nivel de seguimiento.</p>
+              </div>
+              <a href="planes.html" class="sc-pillar-cta">Comparar los 4 planes</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. PRESENTACIÓN DEL EQUIPO ================= -->
+    <section class="section" id="equipo">
+      <div class="container">
+        <div class="sc-team-head" data-reveal>
+          <div class="sc-section-head sc-section-head--flush">
+            <h2>Nuestro equipo</h2>
+            <p>Las personas que impulsan el desarrollo académico, tecnológico y humano de SilveraCalm.</p>
+          </div>
+
+          <div class="sc-team-controls" aria-label="Controles del carrusel de equipo">
+            <span class="sc-team-counter" id="teamCounter" aria-live="polite">1 / 5</span>
+            <button type="button" class="sc-team-nav" id="teamPrev" aria-label="Integrante anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="sc-team-nav" id="teamNext" aria-label="Siguiente integrante">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!--
+          Guía rápida para fotos del equipo:
+          Coloca las fotos en assets/img/team/ con formato .webp o .png usando estos nombres:
+          - quispe-luis.webp / .png
+          - cueva-mathias.webp / .png
+          - montenegro-jostein.webp / .png
+          - barrera-anthony.webp / .png
+          - huaman-gerardo.webp / .png
+        -->
+        <div class="sc-team-viewport" data-reveal>
+          <div class="sc-team-track" id="teamTrack" tabindex="0" role="region" aria-label="Integrantes de SilveraCalm (deslizable horizontalmente)">
+            <article class="sc-team-card is-active" data-team-index="0">
+              <div class="sc-team-photo-frame">
+                <picture>
+                  <source srcset="assets/img/team/quispe-luis.webp" type="image/webp" />
+                  <img src="assets/img/team/quispe-luis.png" alt="Quispe Rivera, Luis Anthony" loading="lazy" draggable="false"
+                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
+                </picture>
+                <div class="sc-team-fallback" aria-hidden="true">
+                  <span>LQ</span>
+                  <small>Foto (.webp / .png)</small>
+                </div>
+              </div>
+              <div class="sc-team-info">
+                <h3>Quispe Rivera, Luis Anthony</h3>
+                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
+                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+              </div>
+            </article>
+
+            <article class="sc-team-card" data-team-index="1">
+              <div class="sc-team-photo-frame">
+                <picture>
+                  <source srcset="assets/img/team/cueva-mathias.webp" type="image/webp" />
+                  <img src="assets/img/team/cueva-mathias.png" alt="Cueva Vilca, Mathías Sebastián" loading="lazy" draggable="false"
+                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
+                </picture>
+                <div class="sc-team-fallback" aria-hidden="true">
+                  <span>MC</span>
+                  <small>Foto (.webp / .png)</small>
+                </div>
+              </div>
+              <div class="sc-team-info">
+                <h3>Cueva Vilca, Mathías Sebastián</h3>
+                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
+                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+              </div>
+            </article>
+
+            <article class="sc-team-card" data-team-index="2">
+              <div class="sc-team-photo-frame">
+                <picture>
+                  <source srcset="assets/img/team/montenegro-jostein.webp" type="image/webp" />
+                  <img src="assets/img/team/montenegro-jostein.png" alt="Montenegro Alzamora, Jostein Sebastian" loading="lazy" draggable="false"
+                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
+                </picture>
+                <div class="sc-team-fallback" aria-hidden="true">
+                  <span>JM</span>
+                  <small>Foto (.webp / .png)</small>
+                </div>
+              </div>
+              <div class="sc-team-info">
+                <h3>Montenegro Alzamora, Jostein Sebastian</h3>
+                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
+                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+              </div>
+            </article>
+
+            <article class="sc-team-card" data-team-index="3">
+              <div class="sc-team-photo-frame">
+                <picture>
+                  <source srcset="assets/img/team/barrera-anthony.webp" type="image/webp" />
+                  <img src="assets/img/team/barrera-anthony.png" alt="Barrera Apcho, Anthony Andres Abel" loading="lazy" draggable="false"
+                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
+                </picture>
+                <div class="sc-team-fallback" aria-hidden="true">
+                  <span>AB</span>
+                  <small>Foto (.webp / .png)</small>
+                </div>
+              </div>
+              <div class="sc-team-info">
+                <h3>Barrera Apcho, Anthony Andres Abel</h3>
+                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
+                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+              </div>
+            </article>
+
+            <article class="sc-team-card" data-team-index="4">
+              <div class="sc-team-photo-frame">
+                <picture>
+                  <source srcset="assets/img/team/huaman-gerardo.webp" type="image/webp" />
+                  <img src="assets/img/team/huaman-gerardo.png" alt="Huaman Rodriguez, Gerardo Saul" loading="lazy" draggable="false"
+                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
+                </picture>
+                <div class="sc-team-fallback" aria-hidden="true">
+                  <span>GH</span>
+                  <small>Foto (.webp / .png)</small>
+                </div>
+              </div>
+              <div class="sc-team-info">
+                <h3>Huaman Rodriguez, Gerardo Saul</h3>
+                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
+                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="sc-team-dots" id="teamDots" role="tablist" aria-label="Seleccionar integrante del equipo">
+          <button type="button" class="sc-team-dot is-active" data-team-dot="0" aria-label="Ver a Quispe Rivera, Luis Anthony" aria-selected="true"></button>
+          <button type="button" class="sc-team-dot" data-team-dot="1" aria-label="Ver a Cueva Vilca, Mathías Sebastián" aria-selected="false"></button>
+          <button type="button" class="sc-team-dot" data-team-dot="2" aria-label="Ver a Montenegro Alzamora, Jostein Sebastian" aria-selected="false"></button>
+          <button type="button" class="sc-team-dot" data-team-dot="3" aria-label="Ver a Barrera Apcho, Anthony Andres Abel" aria-selected="false"></button>
+          <button type="button" class="sc-team-dot" data-team-dot="4" aria-label="Ver a Huaman Rodriguez, Gerardo Saul" aria-selected="false"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. VIDEO DE PRESENTACIÓN ================= -->
+    <section class="section section-white" id="video-pitch">
+      <div class="container">
+        <header class="sc-section-head sc-section-head--center" data-reveal>
+          <h2>Video de presentación del proyecto</h2>
+          <p>Conoce de primera mano cómo funciona SilveraCalm, el problema que abordamos y la visión del equipo detrás de la plataforma.</p>
+        </header>
+
+        <div class="sc-video-layout" data-reveal>
+          <div class="sc-video-stage">
+            <!-- Espacio reservado para insertar el video pitch (<video> o <iframe>) próximamente -->
+            <div class="sc-video-placeholder" role="region" aria-label="Espacio reservado para el video pitch de SilveraCalm">
+              <div class="sc-video-badge">Video Pitch · Próximamente</div>
+              <div class="sc-video-play-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3>Espacio preparado para el video de presentación</h3>
+              <p>Aquí se integrará el video pitch oficial donde el equipo presenta la solución, la validación en Lima y la demostración de SilveraCalm.</p>
+            </div>
+          </div>
+
+          <aside class="sc-video-companion" aria-label="Guía rápida del video con Silvio">
+            <img
+              src="assets/img/silvio/silvio-guia.png"
+              alt="Silvio con su guía médica presentando los puntos clave del video"
+              class="sc-video-companion-img"
+              width="136"
+              height="165"
+              loading="lazy"
+            />
+            <div class="sc-video-companion-body">
+              <h3>¿Qué descubrirás aquí?</h3>
+              <ul>
+                <li>Cómo funciona el sensor discreto sin cámaras ni cables visibles.</li>
+                <li>Cómo Silvio simplifica recetas y avisa en el horario justo.</li>
+                <li>Testimonios y validación real con familias en Lima.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. MISIÓN, VISIÓN Y VALORES ================= -->
+    <section class="section" id="identidad">
+      <div class="container">
+        <div class="sc-id-head" data-reveal>
+          <div class="sc-section-head sc-section-head--flush">
+            <h2>Misión, Visión y Valores</h2>
+            <p>Los principios que guían cada decisión tecnológica y humana de SilveraCalm.</p>
+          </div>
+          <div class="sc-id-mascot-badge">
+            <img
+              src="assets/img/silvio/silvio-corazon.png"
+              alt="Silvio abrazando un corazón verde, símbolo de cuidado digno"
+              class="sc-id-mascot-img"
+              width="74"
+              height="107"
+              loading="lazy"
+            />
+            <p class="sc-id-motto">Familias más unidas, padres más tranquilos</p>
+          </div>
+        </div>
+
+        <div class="sc-mv-duo" data-reveal>
+          <article class="sc-mv-card sc-mv-card--mission">
+            <div class="sc-mv-top">
+              <div class="sc-mv-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <circle cx="12" cy="12" r="5"/>
+                  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3>Misión</h3>
+            </div>
+            <p class="sc-mv-copy">Empoderar a los hijos cuidadores a proteger la salud de sus padres con confianza, tranquilidad y respeto, usando tecnología no invasiva que simplifica el seguimiento médico y transforma la carga diaria del cuidado en una experiencia de acompañamiento sereno.</p>
+            <p class="sc-mv-whisper">Cuidadores más tranquilos, padres más autónomos</p>
+          </article>
+
+          <article class="sc-mv-card sc-mv-card--vision">
+            <div class="sc-mv-top">
+              <div class="sc-mv-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <h3>Visión</h3>
+            </div>
+            <p class="sc-mv-copy">Transformar la forma en que las familias cuidan a distancia, construyendo un ecosistema más consciente, respetuoso y colaborativo, donde la tecnología y el vínculo humano trabajen juntos para que ningún adulto mayor tenga que elegir entre ser cuidado y ser independiente.</p>
+            <p class="sc-mv-whisper">Un cuidado más digno empieza hoy</p>
+          </article>
+        </div>
+
+        <div class="sc-values-showcase" data-reveal>
+          <div class="sc-values-head">
+            <h3>Valores que nos definen</h3>
+            <p>Acompañamiento sereno y tecnología con propósito</p>
+          </div>
+
+          <ul class="sc-values-bento">
+            <li class="sc-value-card sc-value-card--wide">
+              <div class="sc-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="7.5" cy="15.5" r="4.5"/>
+                  <path d="M10.8 12.2L20 3"/>
+                  <path d="M17 6l3 3"/>
+                  <path d="M14.5 8.5l2.5 2.5"/>
+                </svg>
+              </div>
+              <div class="sc-value-body">
+                <h4>Respeto a la autonomía</h4>
+                <p>No vigilamos, acompañamos. Priorizamos la dignidad sobre el monitoreo.</p>
+              </div>
             </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              Solo 2 minutos
+
+            <li class="sc-value-card sc-value-card--wide sc-value-card--teal">
+              <div class="sc-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18h6"/>
+                  <path d="M10 22h4"/>
+                  <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1.1 2h5.8c.1-.8.5-1.5 1.1-2A7 7 0 0 0 12 2z"/>
+                </svg>
+              </div>
+              <div class="sc-value-body">
+                <h4>Inteligencia con propósito</h4>
+                <p>Usamos IA y sensores para resolver angustias humanas, no para vigilar.</p>
+              </div>
             </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Guía PDF sin costo
+
+            <li class="sc-value-card">
+              <div class="sc-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="7" r="3"/>
+                  <circle cx="5.5" cy="15.5" r="2.5"/>
+                  <circle cx="18.5" cy="15.5" r="2.5"/>
+                  <path d="M9.8 9.2L7 13.4"/>
+                  <path d="M14.2 9.2L17 13.4"/>
+                  <path d="M8 15.5h8"/>
+                </svg>
+              </div>
+              <div class="sc-value-body">
+                <h4>Comunidad</h4>
+                <p>Apoyamos a cuidadores compartiendo experiencias y creando una red de contención (Silver Caretakers).</p>
+              </div>
+            </li>
+
+            <li class="sc-value-card sc-value-card--lime">
+              <div class="sc-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l7 3.5v5c0 4.5-3 8.1-7 9.5-4-1.4-7-5-7-9.5v-5L12 3z"/>
+                  <path d="M9.5 12l2 2 3.5-4"/>
+                </svg>
+              </div>
+              <div class="sc-value-body">
+                <h4>Prevención sostenible</h4>
+                <p>Actuamos antes de la emergencia para evitar hospitalizaciones y gastos.</p>
+              </div>
+            </li>
+
+            <li class="sc-value-card">
+              <div class="sc-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M8.5 14.5s1.4 2 3.5 2 3.5-2 3.5-2"/>
+                  <line x1="9" y1="9.5" x2="9.01" y2="9.5"/>
+                  <line x1="15" y1="9.5" x2="15.01" y2="9.5"/>
+                </svg>
+              </div>
+              <div class="sc-value-body">
+                <h4>Simplicidad sin culpa</h4>
+                <p>Transformamos lo complejo en decisiones prácticas y accesibles para la vida diaria.</p>
+              </div>
             </li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-visual">
-          <figure class="hero-card">
-            <span class="floating-tag">Cuidando a quienes nos cuidaron</span>
-
-            <div class="hero-photo">
-              <!-- Live status badge flotante sobre la foto -->
-              <span class="hero-live-badge">
-                <span class="badge-pulse-dot" aria-hidden="true"></span>
-                Botiquín inteligente activo
-              </span>
-
-              <img
-                src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80"
-                alt="Hija adulta y su padre mayor compartiendo un momento sereno en casa"
-                width="900" height="675"
-                onerror="this.style.display='none'" />
-              <figcaption>
-                <span>Marisela y su papá Carlos (75 años)</span>
-                <span>San Borja, Lima</span>
-              </figcaption>
-            </div>
-
-            <!-- Consejo de Silvio con mascota animada y sombra -->
-            <div class="silvera-tip">
-              <div class="silvio-mascot-container">
-                <img src="assets/img/logo-silveracalm.png" alt="Silvio el búho" class="silvera-avatar" width="44" height="64" />
-                <div class="silvio-shadow" aria-hidden="true"></div>
-              </div>
-              <div>
-                <p class="silvera-title">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  Consejo de Silvera
-                </p>
-                <p class="silvera-text">Sin alarmas frías ni llamadas que incomoden: una confirmación silenciosa basta para trabajar tranquila.</p>
-              </div>
-            </div>
+    <!-- ================= 6. CIERRE Y LLAMADO A LA ACCIÓN ================= -->
+    <section class="section section-white" id="cierre">
+      <div class="container">
+        <div class="sc-closing-cta sc-closing-split" data-reveal>
+          <figure class="sc-closing-media">
+            <img
+              src="assets/img/scenes/vinculo-familiar-sereno.jpg"
+              alt="Hijo adulto conversando con calidez y tranquilidad junto a su padre mayor en casa"
+              loading="lazy"
+            />
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= BENEFICIOS ================= -->
-    <section class="section section-white" id="beneficios">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow">Lo que obtienes</span>
-          <h2>¿Qué lograrás con el test?</h2>
-          <p>Una evaluación clara, humana y empática para transformar la incertidumbre en tranquilidad familiar.</p>
-        </header>
-
-        <div class="benefits-grid">
-          <!-- Card destacada estilo Bento (Span principal) -->
-          <article class="feature-card feature-card--highlight" data-reveal data-reveal-delay="1">
-            <div>
-              <div class="feature-icon-wrapper">
-                <span class="feature-icon" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
-                </span>
-              </div>
-              <h3>Conocer su riesgo de omisión médica</h3>
-              <p>Identifica patrones de olvidos en sus tomas diarias de medicamentos antes de que se conviertan en una urgencia o un susto.</p>
-            </div>
-            <span class="feature-card-tag">Evaluación preventiva · Prioridad geriátrica</span>
-          </article>
-
-          <article class="feature-card" data-reveal data-reveal-delay="2">
-            <div>
-              <div class="feature-icon-wrapper">
-                <span class="feature-icon tone-secondary" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg>
-                </span>
-              </div>
-              <h3>Pautas personalizadas para su rutina</h3>
-              <p>Recomendaciones adaptadas a sus tratamientos (hipertensión, diabetes), su edad y los horarios de tu jornada de trabajo.</p>
-            </div>
-            <span class="feature-card-tag" style="color: var(--color-secondary-text);">Acompañamiento a medida</span>
-          </article>
-
-          <article class="feature-card" data-reveal data-reveal-delay="3">
-            <div>
-              <div class="feature-icon-wrapper">
-                <span class="feature-icon tone-tertiary" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </span>
-              </div>
-              <h3>Acompañar sin discusiones ni reproches</h3>
-              <p>Estrategias de comunicación que respetan la dignidad de tu padre y evitan la frustración del «¡no me estés controlando!».</p>
-            </div>
-            <span class="feature-card-tag" style="color: var(--color-tertiary-text);">Respeto a la autonomía</span>
-          </article>
-
-          <article class="feature-card" data-reveal data-reveal-delay="4">
-            <div>
-              <div class="feature-icon-wrapper">
-                <span class="feature-icon tone-dark" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
-                </span>
-              </div>
-              <h3>Recuperar tu foco y tu paz mental</h3>
-              <p>Deja de ser la «alarma humana» a la 1:00 PM y concéntrate en tus labores sabiendo que todo está en orden en casa.</p>
-            </div>
-            <span class="feature-card-tag" style="color: var(--color-primary);">Cero culpa, cero sobrecarga</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CÓMO FUNCIONA ================= -->
-    <section class="section" id="como-funciona">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow">En 3 simples pasos</span>
-          <h2>¿Cómo funciona?</h2>
-          <p>Un proceso fluido, respetuoso con tu tiempo y completamente libre de costos.</p>
-        </header>
-
-        <div class="steps-card" data-reveal>
-          <ol class="stepper" id="stepper" aria-label="Pasos del test">
-            <!-- Barra animada de progreso entre los pasos -->
-            <div class="stepper-progress-track" aria-hidden="true">
-              <div class="stepper-progress-bar"></div>
-            </div>
-
-            <li class="step">
-              <span class="step-indicator" data-step="1">1</span>
-              <h3>Responde el test</h3>
-              <p>Un cuestionario breve sobre las tomas médicas y la dinámica habitual de tu papá en el hogar.</p>
-            </li>
-            <li class="step">
-              <span class="step-indicator" data-step="2">2</span>
-              <h3>Obtén tu diagnóstico</h3>
-              <p>Tu Score de Tranquilidad y el nivel de riesgo de omisión de dosis, calculado de forma inmediata.</p>
-            </li>
-            <li class="step">
-              <span class="step-indicator" data-step="3">3</span>
-              <h3>Recibe la guía práctica</h3>
-              <p>Descarga la «Guía de Cuidado sin Estrés» con pautas de comunicación y telemetría pasiva.</p>
-            </li>
-          </ol>
-
-          <div class="steps-footer">
-            <p class="privacy-note">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Privado y confidencial · Datos 100% protegidos
-            </p>
-            <a href="#" class="btn btn-primary" data-test-cta>
-              Comenzar ahora (2 min) <span class="btn-arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Comparativa Antes / Con SilveraCalm -->
-        <div class="compare-container" data-reveal>
-          <div class="compare" id="compare">
-            <div class="compare-col compare-before">
-              <p class="compare-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                Antes de SilveraCalm
-              </p>
-              <ul>
-                <li>Llamadas de control insistentes que interrumpen su almuerzo y tu trabajo</li>
-                <li>Tentación de instalar cámaras que vulneran su intimidad</li>
-                <li>Dudas constantes, discusiones familiares y sensación de culpa</li>
-              </ul>
-            </div>
-            <div class="compare-col compare-after">
-              <p class="compare-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Con SilveraCalm
-              </p>
-              <ul>
-                <li>Confirmación silenciosa y automática en tu celular sin timbrazos</li>
-                <li>Telemetría pasiva en el botiquín habitual, sin cámaras ni vigilancia</li>
-                <li>El padre conserva su autonomía y la familia recupera la tranquilidad</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= HISTORIAS (Casos Ilustrativos) ================= -->
-    <section class="section section-white" id="historias">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow">Historias que inspiran</span>
-          <h2>Lo que viven otras hijas e hijos cuidadores</h2>
-          <p>Casos ilustrativos basados en vivencias reales de familias en Lima.</p>
-        </header>
-
-        <div class="stories-grid">
-          <!-- Story principal con mayor presencia -->
-          <article class="story-card story-card--featured" data-reveal data-reveal-delay="1">
-            <div class="story-quote-wrap">
-              <svg class="story-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-              <p class="story-quote">«Entendí que el enojo de mi papá cuando le preguntaba por sus pastillas no era ingratitud, sino miedo a perder su independencia. Cambiaron por completo nuestras mañanas al quitar esa llamada obligatoria.»</p>
-            </div>
-            <footer class="story-author">
-              <span class="avatar tone-primary">MG</span>
+          <div class="sc-closing-content">
+            <div class="sc-closing-brand">
+              <img src="assets/img/silvio/silvio-corazon.png" alt="Silvio, asistente de SilveraCalm abrazando un corazón" class="sc-closing-silvio" width="66" height="95" loading="lazy" />
               <div>
-                <strong>Marisela G.</strong>
-                <small>Hija y cuidadora de Carlos (75 años) · San Borja</small>
+                <span class="sc-closing-kicker">SilveraCalm · Cuidando a quienes cuidan</span>
+                <h2>Da el primer paso hacia un cuidado más sereno</h2>
               </div>
-            </footer>
-          </article>
-
-          <article class="story-card" data-reveal data-reveal-delay="2">
-            <div class="story-quote-wrap">
-              <svg class="story-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-              <p class="story-quote">«Ya no siento esa punzada de culpa cuando tengo reuniones largas en la oficina. Sé que está bien sin tener que llamarlo cada hora ni parecer una policía.»</p>
             </div>
-            <footer class="story-author">
-              <span class="avatar tone-secondary">CP</span>
-              <div>
-                <strong>Claudia P.</strong>
-                <small>Hija de Roberto (78 años) · Santiago de Surco</small>
-              </div>
-            </footer>
-          </article>
-
-          <article class="story-card" data-reveal data-reveal-delay="3">
-            <div class="story-quote-wrap">
-              <svg class="story-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-              <p class="story-quote">«Cuidar su hipertensión sin vigilarlo con cámaras era justo lo que necesitábamos. La guía me sirvió para ponerme de acuerdo con mis hermanos.»</p>
+            <p>Evalúa en 2 minutos el riesgo de omisión médica de tu padre con nuestro Test de Tranquilidad Familiar gratuito o prepárate para probar la aplicación.</p>
+            <div class="sc-closing-actions">
+              <a href="#" class="btn btn-primary btn-lg" data-test-cta>
+                Hacer el Test de Tranquilidad
+              </a>
+              <a href="#" class="btn btn-ghost btn-lg" data-download-cta>
+                Descargar la app
+              </a>
             </div>
-            <footer class="story-author">
-              <span class="avatar tone-tertiary">LM</span>
-              <div>
-                <strong>Lucía M.</strong>
-                <small>Hija de Manuel (72 años) · Miraflores</small>
-              </div>
-            </footer>
-          </article>
-        </div>
-
-        <ul class="trust-bar" data-reveal aria-label="Compromisos">
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            100% Confidencial
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Enfoque geriátrico
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-            Cero cámaras ni vigilancia
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Diagnóstico a tu medida
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ================= BLOG EN VIVO ================= -->
-    <section class="section" id="blog">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow">Blog SilveraCalm</span>
-          <h2>Historias y reflexiones para el cuidador</h2>
-          <p>Consejos y artículos prácticos para cuidar a tus padres con ternura, sin desgaste y sin perder tu tranquilidad.</p>
-        </header>
-
-        <div class="blog-toolbar" data-reveal>
-          <label class="search-field">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <span class="sr-only">Buscar en el blog</span>
-            <input type="search" id="blogSearch" placeholder="Buscar por tema o palabra clave…" autocomplete="off" />
-          </label>
-          <p class="live-status" id="blogStatus" aria-live="polite">
-            <span class="live-dot" aria-hidden="true"></span><span id="blogStatusText">Conectando con el blog en vivo…</span>
-          </p>
-        </div>
-
-        <div class="chips" id="blogLabels" role="group" aria-label="Filtrar por tema" data-reveal></div>
-
-        <div id="blogFeatured" data-reveal></div>
-
-        <div class="blog-grid" id="blogGrid" aria-live="polite" data-reveal>
-          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
-        </div>
-
-        <p class="blog-empty" id="blogEmpty" hidden>No encontramos artículos que coincidan con tu búsqueda.</p>
-
-        <div class="blog-more" data-reveal>
-          <button type="button" class="btn btn-ghost" id="blogMore" hidden>Cargar más artículos</button>
-          <a href="https://silveracalm.blogspot.com/" target="_blank" rel="noopener" class="btn btn-outline" id="blogExternal">
-            Visitar el blog completo <span class="btn-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CIERRE (CTA FINAL) ================= -->
-    <section class="section section-white">
-      <div class="container narrow">
-        <div class="cta-final" data-reveal>
-          <div class="silvio-mascot-container">
-            <img src="assets/img/logo-silveracalm.png" alt="Silvio" class="cta-logo" width="56" height="82" />
-            <div class="silvio-shadow" aria-hidden="true"></div>
+            <p class="fine-print">Gratuito · Confidencial · Respeto absoluto a la autonomía familiar</p>
           </div>
-          <h2>Hoy puedes dar un paso decisivo <span class="text-primary-soft">por su salud y tu paz mental</span></h2>
-          <p>Evalúa en 2 minutos el riesgo de omisión médica de tu papá. Recibe tu diagnóstico personalizado y la «Guía de Cuidado sin Estrés», de forma totalmente gratuita.</p>
-          <a href="#" class="btn btn-primary btn-lg" data-test-cta>
-            Hacer el test gratuito <span class="btn-arrow" aria-hidden="true">→</span>
-          </a>
-          <p class="fine-print">Sin registro con tarjeta · Acceso instantáneo · Respeto absoluto a su privacidad</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FAQ ================= -->
-    <section class="section" id="faq">
-      <div class="container narrow">
-        <header class="section-head" data-reveal>
-          <h2>Preguntas frecuentes</h2>
-          <p>Respuestas claras a las dudas más comunes de hijas e hijos cuidadores.</p>
-        </header>
-
-        <div class="faq" data-reveal>
-          <details>
-            <summary>
-              <span>¿El test tiene algún costo o compromiso?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <p>No, es 100% gratuito. Su propósito es orientarte, evaluar el nivel de sobrecarga que experimentas como cuidador o cuidadora, y brindarte herramientas inmediatas sin cobros ocultos.</p>
-          </details>
-          <details>
-            <summary>
-              <span>¿Implica instalar cámaras en casa de mi papá?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <p>Nunca. En SilveraCalm defendemos la autonomía de los adultos mayores. Empleamos telemetría pasiva: un sensor discreto en su botiquín registra de manera silenciosa las aperturas sin invadir su intimidad ni vigilarlo.</p>
-          </details>
-          <details>
-            <summary>
-              <span>Mi papá no se lleva bien con la tecnología, ¿igual funciona?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <p>Por supuesto. Tu padre no tiene que interactuar con pantallas, instalar aplicaciones ni presionar botones complejos. Sigue su rutina diaria abriendo su botiquín habitual como siempre lo ha hecho.</p>
-          </details>
-          <details>
-            <summary>
-              <span>¿Qué pasa si se cae la conexión de internet en su casa?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <p>El dispositivo almacena los registros de manera local y encriptada en su memoria interna, y se sincroniza automáticamente con tu aplicación tan pronto se reanuda la conexión.</p>
-          </details>
         </div>
       </div>
     </section>
@@ -587,13 +845,65 @@
 
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/img/logo-silveracalm.png" alt="" width="32" height="47" />
-        <span class="brand-name">SilveraCalm</span>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <a href="#top" class="footer-brand">
+            <img src="assets/img/logo-silveracalm.png" alt="" width="30" height="44" />
+            <span class="brand-name">Silvera<span class="brand-name-accent">Calm</span></span>
+          </a>
+          <p class="footer-desc">«Cuidando a quienes cuidan». Plataforma de telemetría pasiva y acompañamiento para familias con adultos mayores en Lima, Perú.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Explora</h3>
+          <ul class="footer-links">
+            <li><a href="#top">Inicio</a></li>
+            <li><a href="#propuesta-valor">Propuesta de valor</a></li>
+            <li><a href="#video-pitch">Video de presentación</a></li>
+            <li><a href="planes.html">Planes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Aprende</h3>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#identidad">Misión y Visión</a></li>
+            <li><a href="#equipo">Nuestro equipo</a></li>
+            <li><a href="webinar.html">Webinar gratuito</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">SilveraCalm</h3>
+          <ul class="footer-links">
+            <li><a href="#" data-download-cta>Descargar App</a></li>
+            <li><a href="https://silveracalm.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog oficial</a></li>
+            <li><a href="https://www.tiktok.com/@silveracalmcontigo1" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@SilveraCalmContigo" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Contacto</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:silveracalmcontigo@gmail.com" class="footer-link-email">silveracalmcontigo@gmail.com</a></li>
+          </ul>
+        </div>
       </div>
-      <p>«Cuidando a quienes cuidan». Plataforma de telemetría pasiva y bienestar para familias en Lima, Perú.</p>
-      <p class="footer-legal">&copy; <span id="year">2026</span> SilveraCalm · Proyecto Académico S1708 · Alumno: Luis Anthony Quispe Rivera</p>
+
+      <div class="footer-disclaimer">
+        <p>SilveraCalm presenta una propuesta tecnológica para el seguimiento cotidiano y el bienestar del adulto mayor. La información educativa publicada en este sitio no sustituye la evaluación ni el criterio médico profesional.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; <span id="year">2026</span> SilveraCalm · Proyecto Académico S1708 · Alumno: Luis Anthony Quispe Rivera</p>
+        <div class="footer-bottom-links">
+          <a href="planes.html">Compromiso ético</a>
+          <a href="#faq">Preguntas frecuentes</a>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -605,30 +915,25 @@
       <img src="assets/img/logo-silveracalm.png" alt="" class="modal-logo" width="48" height="70" />
       <h3 id="testModalTitle">El test estará disponible muy pronto</h3>
       <p>Estamos ultimando los detalles del Test de Tranquilidad Familiar. Mientras tanto, te invitamos a explorar las historias y reflexiones en nuestro blog.</p>
-      <a href="#blog" class="btn btn-primary btn-block" data-close>Ir al blog de SilveraCalm</a>
+      <a href="blog.html" class="btn btn-primary btn-block" data-close>Ir al blog de SilveraCalm</a>
     </div>
   </div>
 
-  <!-- ================= MODAL: LECTOR DE ARTÍCULOS ================= -->
-  <div class="modal" id="readerModal" role="dialog" aria-modal="true" aria-labelledby="readerTitle" hidden>
+  <!-- ================= MODAL: DESCARGA DE APP (Próximamente) ================= -->
+  <div class="modal" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle" hidden>
     <div class="modal-backdrop" data-close></div>
-    <div class="modal-panel modal-reader">
-      <div class="reader-bar">
-        <span class="reader-brand">
-          <img src="assets/img/logo-silveracalm.png" alt="" width="20" height="29" /> 
-          Blog SilveraCalm
-        </span>
-        <button type="button" class="modal-close" aria-label="Cerrar artículo" data-close>✕</button>
-      </div>
-      <article class="reader" id="readerBody"></article>
+    <div class="modal-panel modal-sm">
+      <button type="button" class="modal-close" aria-label="Cerrar modal" data-close>✕</button>
+      <img src="assets/img/logo-silveracalm.png" alt="" class="modal-logo" width="48" height="70" />
+      <h3 id="downloadModalTitle">La app de SilveraCalm llegará muy pronto</h3>
+      <p>Estamos preparando el lanzamiento para Android e iOS. Mientras tanto, puedes reservar tu lugar en el webinar gratuito o hacer el test de tranquilidad.</p>
+      <a href="webinar.html" class="btn btn-primary btn-block" data-close>Ir al webinar gratuito</a>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/vendor-purify.min.js" defer></script>
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/blog.js" defer></script>
   <script src="assets/js/chat.js" defer></script>
 </body>
 </html>

@@ -476,6 +476,11 @@
   margin-bottom: 6px;
 }
 
+.phone-card-tag--alert {
+  background: #FEE7E6;
+  color: #B42318;
+}
+
 .phone-card-title {
   font-family: var(--font-title);
   font-size: 0.88rem;
@@ -585,7 +590,12 @@
 .commitments-items-wrap {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+}
+
+.commitments-items-wrap .eyebrow {
+  align-self: flex-start;
+  margin-bottom: 2px;
 }
 
 .commitment-row {
@@ -594,7 +604,7 @@
   gap: 14px;
 }
 
-.commitment-badge-icon {
+.commitment-row .commitment-badge-icon {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -604,7 +614,10 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
   font-weight: 800;
+  line-height: 1;
   margin-top: 2px;
 }
 
@@ -614,14 +627,15 @@
   font-size: 0.95rem;
   font-weight: 800;
   color: var(--text-main);
+  margin-bottom: 3px;
 }
 
-.commitment-row span {
+.commitment-row > div > span {
   display: block;
   font-family: var(--font-body);
   font-size: 0.86rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .illustrative-card {
@@ -848,10 +862,370 @@
 @media (prefers-reduced-motion: reduce) {
   .pricing-card,
   .pricing-card--highlight,
+  .pricing-card--elite,
   .planes-benefit-pill,
   .feature-capability-card,
-  .store-badge-card {
+  .store-badge-card,
+  .planes-scene-card {
     transition: none !important;
     transform: none !important;
+  }
+}
+
+/* =========================================================
+   ACTUALIZACIÓN: ANCHO AMPLIO, LECTURA SENIOR Y SILVIO
+   ========================================================= */
+body.page-planes {
+  --container: min(1400px, 92vw);
+  --text-body: #1E2922;
+  --text-muted: #3A4B40;
+  font-size: 18.5px;
+  line-height: 1.66;
+}
+
+.page-planes .container {
+  padding: 0 clamp(18px, 2.5vw, 34px);
+}
+
+.page-planes .nav-desktop a,
+.page-planes .btn {
+  font-size: 16.5px;
+}
+
+.page-planes .planes-hero-lead {
+  font-size: 1.18rem;
+  line-height: 1.65;
+}
+
+.page-planes .benefit-pill-label {
+  font-size: 0.96rem;
+}
+
+.planes-hero-silvio-strip {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.planes-hero-silvio-img {
+  width: 76px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 12px rgba(13, 111, 94, 0.16));
+}
+
+.planes-hero-silvio-strip strong {
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.04rem;
+  color: var(--header-deep-teal);
+  margin-bottom: 3px;
+}
+
+.planes-hero-silvio-strip p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.52;
+  color: var(--text-body);
+}
+
+.planes-head-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+@media (min-width: 920px) {
+  .planes-head-split {
+    grid-template-columns: 1.18fr 0.82fr;
+    gap: 32px;
+  }
+}
+
+.planes-head-split .section-head--flush {
+  text-align: left;
+  margin: 0;
+}
+
+.planes-head-split .section-head--flush h2 {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  margin: 8px 0 10px;
+}
+
+.planes-head-split .section-head--flush p {
+  font-size: 1.12rem;
+  line-height: 1.62;
+  max-width: 58ch;
+}
+
+.page-planes .pricing-tier-tag {
+  font-size: 0.82rem;
+  padding: 4px 12px;
+}
+
+.page-planes .pricing-tier-subtitle {
+  font-size: 1.06rem;
+}
+
+.page-planes .pricing-tier-included-tag {
+  font-size: 0.92rem;
+  padding: 6px 12px;
+}
+
+.page-planes .pricing-features-list li {
+  font-size: 1.01rem;
+  line-height: 1.52;
+}
+
+.page-planes .feature-check-icon {
+  width: 22px;
+  height: 22px;
+  font-size: 0.82rem;
+}
+
+/* Plan ELITE como ancla visual oscura */
+.pricing-card--elite {
+  background: linear-gradient(160deg, var(--header-deep-teal) 0%, #094D41 100%);
+  border-color: rgba(139, 196, 63, 0.38);
+  color: var(--surface-white);
+  box-shadow: 0 18px 36px -10px rgba(9, 77, 65, 0.35);
+}
+
+.pricing-card--elite:hover {
+  border-color: var(--brand-lime);
+}
+
+.pricing-card--elite .pricing-tier-tag {
+  background: rgba(139, 196, 63, 0.2);
+  color: var(--brand-lime);
+}
+
+.pricing-card--elite .pricing-tier-name,
+.pricing-card--elite .pricing-amount {
+  color: var(--surface-white);
+}
+
+.pricing-card--elite .pricing-tier-subtitle {
+  color: var(--brand-lime);
+}
+
+.pricing-card--elite .pricing-period {
+  color: rgba(226, 243, 231, 0.85);
+}
+
+.pricing-card--elite .pricing-price-wrap {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+.pricing-card--elite .pricing-tier-included-tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--surface-mint);
+}
+
+.pricing-card--elite .pricing-features-list li {
+  color: rgba(243, 247, 245, 0.94);
+}
+
+.pricing-card--elite .feature-check-icon {
+  background: rgba(139, 196, 63, 0.22);
+  color: var(--brand-lime);
+}
+
+.btn-lime {
+  background: var(--brand-lime);
+  color: #0F2419;
+  border-color: var(--brand-lime);
+  font-weight: 800;
+}
+
+.btn-lime:hover {
+  background: #9BD44F;
+  border-color: #9BD44F;
+  transform: translateY(-2px);
+}
+
+.page-planes .guarantee-item-content strong {
+  font-size: 1.04rem;
+}
+
+.page-planes .guarantee-item-content span {
+  font-size: 0.94rem;
+}
+
+.page-planes .phone-mockup-wrapper {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.phone-silvio-assistant {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 8px 12px;
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.phone-silvio-assistant img {
+  width: 44px;
+  height: auto;
+}
+
+.phone-silvio-assistant span {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 0.96rem;
+  color: var(--header-deep-teal);
+}
+
+.page-planes .feature-capability-card h3 {
+  font-size: 1.18rem;
+}
+
+.page-planes .feature-capability-card p {
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.planes-scenes-strip {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.planes-scene-card {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 16 / 10;
+  background: var(--surface-mint);
+}
+
+.planes-scene-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.planes-scene-card figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 32px 18px 16px;
+  background: linear-gradient(to top, rgba(10, 44, 37, 0.9) 0%, rgba(10, 44, 37, 0.56) 62%, transparent 100%);
+  color: var(--surface-white);
+}
+
+.planes-scene-card figcaption strong {
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.08rem;
+  color: #ffffff;
+}
+
+.planes-scene-card figcaption span {
+  display: block;
+  font-size: 0.94rem;
+  color: rgba(243, 247, 245, 0.92);
+  line-height: 1.4;
+}
+
+.commitments-head-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.commitments-silvio-img {
+  width: 72px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 12px rgba(13, 111, 94, 0.16));
+}
+
+.commitments-title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--brand-dark);
+  margin: 4px 0 0;
+}
+
+.page-planes .commitment-row strong {
+  font-size: 1.08rem;
+}
+
+.page-planes .commitment-row > div > span {
+  font-size: 1rem;
+  line-height: 1.52;
+}
+
+.page-planes .illustrative-quote {
+  font-size: 1.06rem;
+  line-height: 1.62;
+}
+
+.illustrative-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.illustrative-author-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--surface-mint);
+  flex-shrink: 0;
+}
+
+.app-cta-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.app-cta-silvio {
+  width: 96px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
+}
+
+@media (max-width: 991px) {
+  .planes-scenes-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .planes-hero-silvio-strip,
+  .app-cta-brand-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-cta-brand-group {
+    align-items: center;
+    text-align: center;
   }
 }

@@ -89,6 +89,14 @@
     }
   });
 
+  /* ---------- Botones de descarga de app (Próximamente) ---------- */
+  document.querySelectorAll('[data-download-cta]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal('downloadModal');
+    });
+  });
+
   /* ---------- Año dinámico del pie de página ---------- */
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
@@ -227,8 +235,8 @@
 
     if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
-    // Fecha objetivo: Sábado 28 de Noviembre de 2026, 10:00:00 AM (Hora de Lima / UTC-5)
-    var targetDate = new Date('2026-11-28T10:00:00-05:00').getTime();
+    // Fecha objetivo: Sábado 28 de Noviembre de 2026, 7:00:00 PM (Hora de Lima / UTC-5)
+    var targetDate = new Date('2026-11-28T19:00:00-05:00').getTime();
 
     function updateCountdown() {
       var now = new Date().getTime();
@@ -305,8 +313,8 @@
       var title = encodeURIComponent('Webinar SilveraCalm: Cuidado y Adherencia Médica en Adultos Mayores');
       var details = encodeURIComponent('Hola ' + (name || 'familiar') + '! Tu acceso al webinar interactivo de SilveraCalm está listo. Aprenderemos estrategias para organizar las medicinas de tus padres con serenidad y sin invadir su intimidad.\n\nEnlace de transmisión: Se enviará 1 hora antes por WhatsApp y correo.');
       var location = encodeURIComponent('Online vía Zoom / Google Meet');
-      // 28 Nov 2026, 10:00 a 10:45 AM Lima (15:00 a 15:45 UTC)
-      var dates = '20261128T150000Z/20261128T154500Z';
+      // 28 Nov 2026, 7:00 a 7:45 PM Lima (00:00 a 00:45 UTC del 29 Nov)
+      var dates = '20261129T000000Z/20261129T004500Z';
       return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + dates + '&details=' + details + '&location=' + location;
     }
 
@@ -433,6 +441,207 @@
         }
       });
     }
+  })();
+
+  /* ---------- Carrusel interactivo de Nuestro Equipo ---------- */
+  (function initTeamCarousel() {
+    var track = document.getElementById('teamTrack');
+    if (!track) return;
+
+    var cards = Array.prototype.slice.call(track.querySelectorAll('.sc-team-card'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('[data-team-dot]'));
+    var prevBtn = document.getElementById('teamPrev');
+    var nextBtn = document.getElementById('teamNext');
+    var counter = document.getElementById('teamCounter');
+    if (!cards.length) return;
+
+    var activeIndex = 0;
+
+    function setActive(index) {
+      activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+      cards.forEach(function (card, i) {
+        card.classList.toggle('is-active', i === activeIndex);
+      });
+      dots.forEach(function (dot, i) {
+        var isCurr = i === activeIndex;
+        dot.classList.toggle('is-active', isCurr);
+        dot.setAttribute('aria-selected', String(isCurr));
+      });
+      if (counter) {
+        counter.textContent = (activeIndex + 1) + ' / ' + cards.length;
+      }
+      if (prevBtn) prevBtn.disabled = activeIndex === 0;
+      if (nextBtn) nextBtn.disabled = activeIndex === cards.length - 1;
+    }
+
+    function scrollToCard(index) {
+      var targetIndex = Math.max(0, Math.min(index, cards.length - 1));
+      var card = cards[targetIndex];
+      if (!card) return;
+      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      setActive(targetIndex);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        scrollToCard(activeIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        scrollToCard(activeIndex + 1);
+      });
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(dot.getAttribute('data-team-dot'), 10);
+        if (!isNaN(idx)) scrollToCard(idx);
+      });
+    });
+
+    cards.forEach(function (card, i) {
+      card.addEventListener('click', function () {
+        setActive(i);
+      });
+    });
+
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        scrollToCard(activeIndex + 1);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        scrollToCard(activeIndex - 1);
+      }
+    });
+
+    var scrollTimer = null;
+    track.addEventListener('scroll', function () {
+      if (scrollTimer) clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        var trackLeft = track.scrollLeft + track.offsetLeft;
+        var closest = 0;
+        var minDist = Infinity;
+        cards.forEach(function (card, i) {
+          var dist = Math.abs(card.offsetLeft - trackLeft);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = i;
+          }
+        });
+        setActive(closest);
+      }, 60);
+    }, { passive: true });
+
+    // Arrastre con el mouse en escritorio
+    var isDown = false;
+    var startX = 0;
+    var startScroll = 0;
+
+    track.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      isDown = true;
+      startX = e.pageX - track.offsetLeft;
+      startScroll = track.scrollLeft;
+      track.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mouseup', function () {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('is-dragging');
+    });
+
+    track.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - track.offsetLeft;
+      track.scrollLeft = startScroll - (x - startX) * 1.25;
+    });
+
+    setActive(0);
+  })();
+
+  /* =========================================================
+     8. EJEMPLO INTERACTIVO ANTES Y DESPUÉS (#antes-despues)
+     ========================================================= */
+  (function initBeforeAfterShowcase() {
+    var tabs = document.querySelectorAll('[data-ba-tab]');
+    if (!tabs.length) return;
+
+    var scenarios = {
+      morning: {
+        beforeTime: '8:15 a. m.',
+        beforeEvent: 'Llamada saliente: «Papá» · 3er intento sin respuesta',
+        beforeQuote: '«¡Papá! ¿Ya tomaste la pastilla de la presión? Te llamo porque me preocupo.»',
+        beforeParent: 'Incómodo o regañado, como si perdiera su independencia.',
+        beforeChild: 'Sales de tu reunión con estrés, culpa y dudas de si realmente la tomó.',
+        afterTime: '8:14 a. m.',
+        afterEvent: 'Silvio · Botiquín abierto a tiempo',
+        afterQuote: '«Tu papá abrió su botiquín en su horario habitual. Todo en orden, no necesitas llamarlo.»',
+        afterParent: 'Respetado y autónomo, sin cámaras ni recordatorios invasivos en casa.',
+        afterChild: 'Trabajas enfocado y tranquilo sabiendo que su tratamiento va al día.'
+      },
+      afternoon: {
+        beforeTime: '2:30 p. m.',
+        beforeEvent: 'Foto borrosa por chat · Receta médica sin orden',
+        beforeQuote: '«¿Esta pastilla era media o entera después del almuerzo? No entiendo la letra del doctor.»',
+        beforeParent: 'Confundido frente al pastillero y con miedo a equivocarse de dosis.',
+        beforeChild: 'Pierdes la tarde buscando recetas antiguas en chats y pidiendo favores.',
+        afterTime: '2:30 p. m.',
+        afterEvent: 'Silvio IA · Receta digitalizada con OCR',
+        afterQuote: '«Receta leída y organizada: 1 tableta después del almuerzo. Horario guardado para la familia.»',
+        afterParent: 'Seguro con su rutina habitual sin tener que descifrar papeles.',
+        afterChild: 'Tienes el esquema médico claro en tu celular y respaldado por SilveraCalm.'
+      },
+      night: {
+        beforeTime: '7:30 p. m.',
+        beforeEvent: 'Llamada nocturna · Desgaste emocional',
+        beforeQuote: '«¿Tomaste todo hoy? ¿Seguro? No te olvides mañana tampoco, por favor.»',
+        beforeParent: 'Agotado de que cada conversación gire en torno a sus medicinas.',
+        beforeChild: 'Sientes que dejaste de ser hijo o hija para convertirte en supervisor.',
+        afterTime: '7:30 p. m.',
+        afterEvent: 'Resumen diario · 100% de tomas confirmadas',
+        afterQuote: '«Hoy se completaron las 2 tomas del día sin novedades. Buen momento para conversar.»',
+        afterParent: 'Feliz de recibir una llamada de cariño sin sentirse interrogado.',
+        afterChild: 'Recuperas el vínculo familiar: llamas para saber cómo estuvo su día.'
+      }
+    };
+
+    var els = {
+      beforeTime: document.getElementById('baBeforeTime'),
+      beforeEvent: document.getElementById('baBeforeEvent'),
+      beforeQuote: document.getElementById('baBeforeQuote'),
+      beforeParent: document.getElementById('baBeforeParent'),
+      beforeChild: document.getElementById('baBeforeChild'),
+      afterTime: document.getElementById('baAfterTime'),
+      afterEvent: document.getElementById('baAfterEvent'),
+      afterQuote: document.getElementById('baAfterQuote'),
+      afterParent: document.getElementById('baAfterParent'),
+      afterChild: document.getElementById('baAfterChild')
+    };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var key = tab.getAttribute('data-ba-tab');
+        var data = scenarios[key];
+        if (!data) return;
+
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        Object.keys(els).forEach(function (field) {
+          if (els[field] && data[field]) {
+            els[field].textContent = data[field];
+          }
+        });
+      });
+    });
   })();
 
 })();
