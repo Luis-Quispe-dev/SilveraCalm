@@ -371,8 +371,8 @@
   if (readerModal) {
     readerModal.addEventListener('modal:closed', function () {
       state.openId = null;
-      document.title = 'SilveraCalm | Test de Tranquilidad Familiar';
-      if (/^#articulo-/.test(location.hash)) history.pushState(null, '', '#blog');
+      document.title = 'Blog SilveraCalm | Historias y reflexiones para el cuidador';
+      if (/^#articulo-/.test(location.hash)) history.pushState(null, '', location.pathname + location.search);
     });
   }
   window.addEventListener('popstate', openFromHash);
