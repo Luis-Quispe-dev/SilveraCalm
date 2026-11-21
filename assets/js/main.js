@@ -105,17 +105,20 @@
      SISTEMA DE ANIMACIONES Y EXPERIENCIA INTERACTIVA
      ========================================================== */
 
-  /* ---------- Header con sombra y compactación dinámica ---------- */
+  /* ---------- Header con sombra y compactación dinámica (con histéresis) ---------- */
   (function initHeader() {
     var header = document.querySelector('.site-header');
     if (!header) return;
 
+    var isCompact = false;
     var ticking = false;
     function checkScroll() {
       var top = window.pageYOffset || document.documentElement.scrollTop;
-      if (top > 40) {
+      if (!isCompact && top > 96) {
+        isCompact = true;
         header.classList.add('is-compact');
-      } else {
+      } else if (isCompact && top < 24) {
+        isCompact = false;
         header.classList.remove('is-compact');
       }
       ticking = false;
@@ -129,6 +132,14 @@
     }, { passive: true });
 
     checkScroll();
+
+    // Asegura volver arriba al hacer clic en el logo o enlaces #top aunque el hash ya esté activo
+    document.querySelectorAll('a[href="#top"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
   })();
 
   /* ---------- Scroll Reveals con IntersectionObserver ---------- */

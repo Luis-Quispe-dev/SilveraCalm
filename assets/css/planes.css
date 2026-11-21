@@ -19,7 +19,7 @@
    ========================================================= */
 .planes-hero {
   position: relative;
-  padding: 56px 0 64px;
+  padding: 40px 0 48px;
   background-color: var(--bg-global);
   overflow: hidden;
 }
@@ -157,7 +157,7 @@
    ========================================================= */
 .section-pricing {
   background-color: #ffffff;
-  padding: 80px 0 88px;
+  padding: 56px 0 64px;
 }
 
 .pricing-grid {
@@ -383,7 +383,7 @@
    ========================================================= */
 .section-features-showcase {
   background-color: var(--bg-global);
-  padding: 88px 0 92px;
+  padding: 60px 0 68px;
 }
 
 .features-showcase-grid {
@@ -679,7 +679,7 @@
 .section-app-cta {
   background: linear-gradient(135deg, #009245 0%, #0D6F5E 100%);
   color: #ffffff;
-  padding: 64px 0;
+  padding: 48px 0;
 }
 
 .app-cta-inner {
@@ -691,7 +691,7 @@
 }
 
 .app-cta-copy {
-  max-width: 600px;
+  max-width: 720px;
 }
 
 .app-cta-copy h2 {
@@ -876,20 +876,20 @@
    ACTUALIZACIÓN: ANCHO AMPLIO, LECTURA SENIOR Y SILVIO
    ========================================================= */
 body.page-planes {
-  --container: min(1400px, 92vw);
+  --container: min(1760px, 96vw);
   --text-body: #1E2922;
   --text-muted: #3A4B40;
-  font-size: 18.5px;
+  font-size: 21.5px;
   line-height: 1.66;
 }
 
 .page-planes .container {
-  padding: 0 clamp(18px, 2.5vw, 34px);
+  padding: 0 clamp(14px, 1.5vw, 22px);
 }
 
 .page-planes .nav-desktop a,
 .page-planes .btn {
-  font-size: 16.5px;
+  font-size: 19px;
 }
 
 .page-planes .planes-hero-lead {
@@ -963,7 +963,7 @@ body.page-planes {
 .planes-head-split .section-head--flush p {
   font-size: 1.12rem;
   line-height: 1.62;
-  max-width: 58ch;
+  max-width: 68ch;
 }
 
 .page-planes .pricing-tier-tag {

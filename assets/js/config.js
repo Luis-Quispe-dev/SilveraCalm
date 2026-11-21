@@ -6,7 +6,7 @@ window.SILVERA_CONFIG = {
   // 1) Enlace del Test de Tranquilidad Familiar.
   //    Pega aquí la URL de tu test (Google Forms, Typeform, tu app...).
   //    Si lo dejas vacío (''), los botones mostrarán un aviso de "muy pronto".
-  TEST_URL: '',
+  TEST_URL: 'test.html',
 
   //    true  = el test se abre en una pestaña nueva
   //    false = el test se abre en la misma pestaña

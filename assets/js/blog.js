@@ -3,7 +3,8 @@
    - Lee TODOS los artículos publicados en tu Blogger.
    - Se actualiza solo cada X minutos y al volver a la pestaña.
    - Filtros por etiqueta, buscador y "Cargar más".
-   - Lector integrado: el artículo completo se abre aquí mismo.
+   - Al hacer clic en un artículo navega a articulo.html?id=...
+     (vista completa estilo Blogger, sin popup).
    No necesitas tocar este archivo: la configuración está en config.js
    ========================================================= */
 (function () {
@@ -17,6 +18,22 @@
   var CACHE_KEY = 'silvera_blog_cache_v1';
   var FEED_BATCH = 150; // máximo que Blogger entrega por petición
 
+  // Redirección retrocompatible si alguien entra con #articulo-ID
+  var oldHash = /^#articulo-(.+)$/.exec(window.location.hash || '');
+  if (oldHash) {
+    window.location.replace('articulo.html?id=' + encodeURIComponent(decodeURIComponent(oldHash[1])));
+    return;
+  }
+
+  // Leer filtros iniciales desde la URL (?etiqueta=...&q=...)
+  var initialLabel = 'Todos';
+  var initialQuery = '';
+  try {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('etiqueta')) initialLabel = urlParams.get('etiqueta');
+    if (urlParams.get('q')) initialQuery = urlParams.get('q');
+  } catch (e) { /* URLSearchParams no disponible */ }
+
   // Artículos de respaldo (solo si Blogger no responde y no hay caché)
   var RESPALDO = [
     { t: 'El “estoy bien” automático: el peso invisible de ser la hija fuerte', u: '/2026/11/el-estoy-bien-automatico-el-peso.html', d: '2026-11-04' },
@@ -26,10 +43,10 @@
 
   /* ---------- Estado ---------- */
   var state = {
-    posts: [],          // todos los artículos
-    label: 'Todos',     // filtro activo
-    query: '',          // texto del buscador
-    visible: PAGE_SIZE, // cuántos se muestran en la grilla
+    posts: [],              // todos los artículos
+    label: initialLabel,    // filtro activo
+    query: initialQuery,    // texto del buscador
+    visible: PAGE_SIZE,     // cuántos se muestran en la grilla
     lastSync: null,
     loading: false
   };
@@ -43,10 +60,10 @@
   var $empty = document.getElementById('blogEmpty');
   var $status = document.getElementById('blogStatus');
   var $statusText = document.getElementById('blogStatusText');
-  var $reader = document.getElementById('readerBody');
   var $external = document.getElementById('blogExternal');
   if (!$grid) return;
   if ($external) $external.href = BLOG_URL + '/';
+  if ($search && initialQuery) $search.value = initialQuery;
 
   /* ---------- Utilidades ---------- */
   function esc(s) {
@@ -196,16 +213,21 @@
     meta.push('<span>' + p.minutes + ' min de lectura</span>');
     if (p.labels[0]) meta.push('<span class="post-tag">' + esc(p.labels[0]) + '</span>');
 
+    var href = p.external
+      ? esc(p.url)
+      : 'articulo.html?id=' + encodeURIComponent(p.id);
+    var extAttrs = p.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+
     return '' +
-      '<button type="button" class="post-card" data-post="' + esc(p.id) + '" aria-label="Leer: ' + esc(p.title) + '">' +
+      '<a href="' + href + '"' + extAttrs + ' class="post-card" aria-label="Leer: ' + esc(p.title) + '">' +
         '<div class="post-media">' + media + '</div>' +
         '<div class="post-body">' +
           '<div class="post-meta">' + meta.join('') + '</div>' +
           '<h3 class="post-title">' + esc(p.title) + '</h3>' +
           (p.excerpt ? '<p class="post-excerpt">' + esc(featured ? p.excerpt : p.excerpt.slice(0, 120) + (p.excerpt.length > 120 ? '…' : '')) + '</p>' : '') +
-          '<span class="post-read">Leer artículo →</span>' +
+          '<span class="post-read">Leer artículo completo →</span>' +
         '</div>' +
-      '</button>';
+      '</a>';
   }
 
   function renderLabels() {
@@ -272,7 +294,6 @@
       } else {
         setStatus('is-live', liveText());
       }
-      openFromHash();
     }).catch(function () {
       state.loading = false;
       if (!state.posts.length) useFallback();
@@ -288,99 +309,8 @@
     setStatus('is-offline', 'No pudimos conectar con el blog · reintentando…');
   }
 
-  /* ---------- Lector de artículos ---------- */
-  function sanitize(html) {
-    if (window.DOMPurify) {
-      return window.DOMPurify.sanitize(html, {
-        ADD_TAGS: ['iframe'],
-        ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'target'],
-        FORBID_TAGS: ['style', 'form', 'input']
-      });
-    }
-    // Sin DOMPurify: solo texto, por seguridad
-    return '<p>' + esc(htmlToText(html)) + '</p>';
-  }
-
-  if (window.DOMPurify) {
-    window.DOMPurify.addHook('afterSanitizeAttributes', function (node) {
-      if (node.tagName === 'A' && node.getAttribute('href')) {
-        node.setAttribute('target', '_blank');
-        node.setAttribute('rel', 'noopener');
-      }
-      if (node.tagName === 'IMG') node.setAttribute('loading', 'lazy');
-      if (node.tagName === 'IFRAME') {
-        var src = node.getAttribute('src') || '';
-        // Solo videos de YouTube / Blogger
-        if (!/^https:\/\/(www\.)?(youtube\.com|youtube-nocookie\.com|www\.blogger\.com)\//.test(src)) node.remove();
-      }
-    });
-  }
-
-  function openPost(id, pushHash) {
-    var p = state.posts.filter(function (x) { return x.id === id; })[0];
-    if (!p) return;
-    if (p.external || !p.html) { window.open(p.url, '_blank', 'noopener'); return; }
-
-    var labels = p.labels.map(function (l) { return '<span class="post-tag">' + esc(l) + '</span>'; }).join('');
-    $reader.innerHTML = '' +
-      '<header class="reader-head">' +
-        '<div class="post-meta">' + (p.published ? '<span>' + esc(formatDate(p.published)) + '</span>' : '') +
-          '<span>' + p.minutes + ' min de lectura</span>' + labels + '</div>' +
-        '<h1 id="readerTitle">' + esc(p.title) + '</h1>' +
-      '</header>' +
-      '<div class="reader-content">' + sanitize(p.html) + '</div>' +
-      '<footer class="reader-foot">' +
-        '<div class="silvera-tip">' +
-          '<img src="assets/img/logo-silveracalm.png" alt="" class="silvera-avatar">' +
-          '<div><p class="silvera-title">Consejo de Silvera</p>' +
-          '<p class="silvera-text">¿Te viste reflejada en esta historia? Descubre en 2 minutos cómo está la tranquilidad en tu hogar.</p></div>' +
-        '</div>' +
-        '<a href="#" class="btn btn-primary" data-test-cta-reader>Hacer el test gratuito →</a>' +
-        '<a href="' + esc(p.url) + '" target="_blank" rel="noopener" class="btn btn-outline">Comentar en el blog ↗</a>' +
-      '</footer>';
-
-    // Botón del test dentro del lector
-    var cta = $reader.querySelector('[data-test-cta-reader]');
-    var CFGT = window.SILVERA_CONFIG || {};
-    if (cta) {
-      if (CFGT.TEST_URL) { cta.href = CFGT.TEST_URL; if (CFGT.TEST_NEW_TAB) { cta.target = '_blank'; cta.rel = 'noopener'; } }
-      else cta.addEventListener('click', function (e) { e.preventDefault(); window.SilveraModal.open('testModal'); });
-    }
-
-    state.openId = p.id;
-    $reader.scrollTop = 0;
-    window.SilveraModal.open('readerModal');
-    if (pushHash !== false && location.hash !== '#articulo-' + p.id) {
-      history.pushState(null, '', '#articulo-' + p.id);
-    }
-    document.title = p.title + ' | SilveraCalm';
-  }
-
-  function openFromHash() {
-    var m = /^#articulo-(.+)$/.exec(location.hash);
-    var modal = document.getElementById('readerModal');
-    if (m) {
-      var id = decodeURIComponent(m[1]);
-      if (modal && !modal.hidden && state.openId === id) return; // ya está abierto: no interrumpir la lectura
-      openPost(id, false);
-    }
-    else if (modal && !modal.hidden) window.SilveraModal.close(modal);
-  }
-
-  var readerModal = document.getElementById('readerModal');
-  if (readerModal) {
-    readerModal.addEventListener('modal:closed', function () {
-      state.openId = null;
-      document.title = 'Blog SilveraCalm | Historias y reflexiones para el cuidador';
-      if (/^#articulo-/.test(location.hash)) history.pushState(null, '', location.pathname + location.search);
-    });
-  }
-  window.addEventListener('popstate', openFromHash);
-
   /* ---------- Eventos ---------- */
   document.addEventListener('click', function (e) {
-    var card = e.target.closest('[data-post]');
-    if (card) { openPost(card.getAttribute('data-post')); return; }
     var chip = e.target.closest('[data-label]');
     if (chip) {
       state.label = chip.getAttribute('data-label');
