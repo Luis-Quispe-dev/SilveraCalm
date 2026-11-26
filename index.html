@@ -499,7 +499,7 @@
           </div>
 
           <div class="sc-team-controls" aria-label="Controles del carrusel de equipo">
-            <span class="sc-team-counter" id="teamCounter" aria-live="polite">1 / 5</span>
+            <span class="sc-team-counter" id="teamCounter" aria-live="polite">1 / 4</span>
             <button type="button" class="sc-team-nav" id="teamPrev" aria-label="Integrante anterior">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
@@ -510,108 +510,75 @@
         </div>
 
         <!--
-          Guía rápida para fotos del equipo:
-          Coloca las fotos en assets/img/team/ con formato .webp o .png usando estos nombres:
-          - quispe-luis.webp / .png
-          - cueva-mathias.webp / .png
-          - montenegro-jostein.webp / .png
-          - barrera-anthony.webp / .png
-          - huaman-gerardo.webp / .png
+          Fotos del equipo en assets/img/team/:
+          - quispe-luis.jpg
+          - cueva-mathias.jpg
+          - montenegro-jostein.jpg
+          - huaman-gerardo.jpg
         -->
         <div class="sc-team-viewport" data-reveal>
           <div class="sc-team-track" id="teamTrack" tabindex="0" role="region" aria-label="Integrantes de SilveraCalm (deslizable horizontalmente)">
             <article class="sc-team-card is-active" data-team-index="0">
               <div class="sc-team-photo-frame">
-                <picture>
-                  <source srcset="assets/img/team/quispe-luis.webp" type="image/webp" />
-                  <img src="assets/img/team/quispe-luis.png" alt="Quispe Rivera, Luis Anthony" loading="lazy" draggable="false"
-                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
-                </picture>
+                <img src="assets/img/team/quispe-luis.jpg" alt="Quispe Rivera, Luis Anthony" loading="lazy" draggable="false"
+                     onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
                 <div class="sc-team-fallback" aria-hidden="true">
                   <span>LQ</span>
-                  <small>Foto (.webp / .png)</small>
+                  <small>Foto (.jpg)</small>
                 </div>
               </div>
               <div class="sc-team-info">
                 <h3>Quispe Rivera, Luis Anthony</h3>
-                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
-                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+                <p class="sc-team-role">Líder de Proyecto y Arquitectura Digital</p>
+                <p class="sc-team-bio">Coordina la visión integral de SilveraCalm y el desarrollo de la plataforma web, integrando el Test de Tranquilidad Familiar y la experiencia del cuidador.</p>
               </div>
             </article>
 
             <article class="sc-team-card" data-team-index="1">
               <div class="sc-team-photo-frame">
-                <picture>
-                  <source srcset="assets/img/team/cueva-mathias.webp" type="image/webp" />
-                  <img src="assets/img/team/cueva-mathias.png" alt="Cueva Vilca, Mathías Sebastián" loading="lazy" draggable="false"
-                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
-                </picture>
+                <img src="assets/img/team/cueva-mathias.jpg" alt="Cueva Vilca, Mathías Sebastián" loading="lazy" draggable="false"
+                     onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
                 <div class="sc-team-fallback" aria-hidden="true">
                   <span>MC</span>
-                  <small>Foto (.webp / .png)</small>
+                  <small>Foto (.jpg)</small>
                 </div>
               </div>
               <div class="sc-team-info">
                 <h3>Cueva Vilca, Mathías Sebastián</h3>
-                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
-                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+                <p class="sc-team-role">Hardware y Telemetría No Invasiva</p>
+                <p class="sc-team-bio">Diseña la solución del sensor discreto para el botiquín habitual, asegurando confirmaciones silenciosas de toma médica sin cámaras ni fricción.</p>
               </div>
             </article>
 
             <article class="sc-team-card" data-team-index="2">
               <div class="sc-team-photo-frame">
-                <picture>
-                  <source srcset="assets/img/team/montenegro-jostein.webp" type="image/webp" />
-                  <img src="assets/img/team/montenegro-jostein.png" alt="Montenegro Alzamora, Jostein Sebastian" loading="lazy" draggable="false"
-                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
-                </picture>
+                <img src="assets/img/team/montenegro-jostein.jpg" alt="Montenegro Alzamora, Jostein Sebastian" loading="lazy" draggable="false"
+                     onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
                 <div class="sc-team-fallback" aria-hidden="true">
                   <span>JM</span>
-                  <small>Foto (.webp / .png)</small>
+                  <small>Foto (.jpg)</small>
                 </div>
               </div>
               <div class="sc-team-info">
                 <h3>Montenegro Alzamora, Jostein Sebastian</h3>
-                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
-                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+                <p class="sc-team-role">Inteligencia Artificial y Asistente Silvio</p>
+                <p class="sc-team-bio">Impulsa la arquitectura de Silvio para la lectura de recetas médicas (OCR), alertas cruzadas inteligentes y acompañamiento empático 24/7.</p>
               </div>
             </article>
 
             <article class="sc-team-card" data-team-index="3">
               <div class="sc-team-photo-frame">
-                <picture>
-                  <source srcset="assets/img/team/barrera-anthony.webp" type="image/webp" />
-                  <img src="assets/img/team/barrera-anthony.png" alt="Barrera Apcho, Anthony Andres Abel" loading="lazy" draggable="false"
-                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
-                </picture>
-                <div class="sc-team-fallback" aria-hidden="true">
-                  <span>AB</span>
-                  <small>Foto (.webp / .png)</small>
-                </div>
-              </div>
-              <div class="sc-team-info">
-                <h3>Barrera Apcho, Anthony Andres Abel</h3>
-                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
-                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
-              </div>
-            </article>
-
-            <article class="sc-team-card" data-team-index="4">
-              <div class="sc-team-photo-frame">
-                <picture>
-                  <source srcset="assets/img/team/huaman-gerardo.webp" type="image/webp" />
-                  <img src="assets/img/team/huaman-gerardo.png" alt="Huaman Rodriguez, Gerardo Saul" loading="lazy" draggable="false"
-                       onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
-                </picture>
+                <img src="assets/img/team/huaman-gerardo.jpg" alt="Huaman Rodriguez, Gerardo Saul" loading="lazy" draggable="false"
+                     onerror="this.style.display='none'; this.closest('.sc-team-photo-frame').classList.add('is-empty');" />
                 <div class="sc-team-fallback" aria-hidden="true">
                   <span>GH</span>
-                  <small>Foto (.webp / .png)</small>
+                  <small>Foto (.jpg)</small>
                 </div>
               </div>
               <div class="sc-team-info">
                 <h3>Huaman Rodriguez, Gerardo Saul</h3>
-                <p class="sc-team-role">Integrante del equipo · [Rol por definir]</p>
-                <p class="sc-team-bio">Espacio reservado para la breve biografía y aporte principal en SilveraCalm.</p>
+                <p class="sc-team-role">Experiencia de Usuario y Comunidad SilverCaretakers</p>
+                <p class="sc-team-bio">Lidera la accesibilidad para familias en Lima, la validación con cuidadores y el diseño de la red de soporte mutuo SilverCaretakers.</p>
               </div>
             </article>
           </div>
@@ -621,8 +588,7 @@
           <button type="button" class="sc-team-dot is-active" data-team-dot="0" aria-label="Ver a Quispe Rivera, Luis Anthony" aria-selected="true"></button>
           <button type="button" class="sc-team-dot" data-team-dot="1" aria-label="Ver a Cueva Vilca, Mathías Sebastián" aria-selected="false"></button>
           <button type="button" class="sc-team-dot" data-team-dot="2" aria-label="Ver a Montenegro Alzamora, Jostein Sebastian" aria-selected="false"></button>
-          <button type="button" class="sc-team-dot" data-team-dot="3" aria-label="Ver a Barrera Apcho, Anthony Andres Abel" aria-selected="false"></button>
-          <button type="button" class="sc-team-dot" data-team-dot="4" aria-label="Ver a Huaman Rodriguez, Gerardo Saul" aria-selected="false"></button>
+          <button type="button" class="sc-team-dot" data-team-dot="3" aria-label="Ver a Huaman Rodriguez, Gerardo Saul" aria-selected="false"></button>
         </div>
       </div>
     </section>

@@ -4961,7 +4961,7 @@ body.modal-open {
   }
 }
 
-/* 5. Presentación del equipo (Carrusel interactivo escroleable) */
+/* 5. Presentación del equipo (Grid equilibrado en desktop/tablet + carrusel móvil) */
 .sc-team-head {
   display: flex;
   flex-wrap: wrap;
@@ -5027,7 +5027,7 @@ body.modal-open {
 
 .sc-team-track {
   display: flex;
-  gap: 22px;
+  gap: 18px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 4px;
@@ -5062,45 +5062,74 @@ body.modal-open {
 }
 
 .sc-team-card {
-  flex: 0 0 min(310px, 82vw);
+  position: relative;
+  flex: 0 0 min(310px, 84vw);
   scroll-snap-align: start;
-  background: var(--surface-white);
+  background: linear-gradient(180deg, #EAF6EE 0%, var(--surface-white) 108px);
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
+  padding: 32px 24px 26px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   box-shadow: var(--shadow-xs);
   transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.sc-team-card:hover,
-.sc-team-card.is-active {
-  border-color: rgba(0, 146, 69, 0.55);
-  box-shadow: var(--shadow-md);
+.sc-team-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 24px auto 24px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-teal));
+  opacity: 0.72;
+  transition: opacity 0.22s ease;
 }
 
 .sc-team-card:hover {
   transform: translateY(-3px);
+  border-color: rgba(0, 146, 69, 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+.sc-team-card:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 639px) {
+  .sc-team-card.is-active {
+    border-color: rgba(0, 146, 69, 0.55);
+    box-shadow: var(--shadow-md);
+  }
 }
 
 .sc-team-photo-frame {
   position: relative;
-  aspect-ratio: 4 / 3;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  flex-shrink: 0;
   background: var(--surface-mint);
   overflow: hidden;
+  margin: 0 auto 18px;
+  border: 4px solid var(--surface-white);
+  box-shadow: 0 0 0 1.5px rgba(13, 111, 94, 0.18), var(--shadow-sm);
 }
 
 .sc-team-photo-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 22%;
   display: block;
   transition: transform 0.35s ease;
 }
 
 .sc-team-card:hover .sc-team-photo-frame img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .sc-team-fallback {
@@ -5110,7 +5139,7 @@ body.modal-open {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   color: var(--header-deep-teal);
   background: linear-gradient(145deg, var(--surface-mint) 0%, #D4ECDD 100%);
 }
@@ -5122,9 +5151,9 @@ body.modal-open {
 .sc-team-fallback span {
   font-family: var(--font-title);
   font-weight: 900;
-  font-size: 1.85rem;
-  width: 64px;
-  height: 64px;
+  font-size: 1.65rem;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: var(--surface-white);
   color: var(--brand-primary);
@@ -5134,36 +5163,54 @@ body.modal-open {
 }
 
 .sc-team-fallback small {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+  display: none;
 }
 
 .sc-team-info {
-  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  padding: 0;
 }
 
 .sc-team-info h3 {
   font-family: var(--font-title);
   font-weight: 800;
-  font-size: 1.04rem;
+  font-size: 1.06rem;
   line-height: 1.3;
   color: var(--brand-dark);
   margin: 0 0 6px;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sc-team-role {
   font-family: var(--font-title);
   font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--brand-teal);
-  margin: 0 0 8px;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: var(--header-deep-teal);
+  margin: 0 0 14px;
+  min-height: 2.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 28ch;
 }
 
 .sc-team-bio {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  line-height: 1.56;
   color: var(--text-muted);
   margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(210, 228, 218, 0.85);
+  width: 100%;
+  max-width: 34ch;
 }
 
 .sc-team-dots {
@@ -5192,6 +5239,57 @@ body.modal-open {
 .sc-team-dot:focus-visible {
   outline: 2px solid var(--brand-primary);
   outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .sc-team-head {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .sc-team-head .sc-section-head {
+    margin-inline: auto;
+  }
+
+  .sc-team-controls,
+  .sc-team-dots {
+    display: none;
+  }
+
+  .sc-team-track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    overflow: visible;
+    padding: 4px 0 6px;
+    cursor: default;
+  }
+
+  .sc-team-card {
+    flex: initial;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1060px) {
+  .sc-team-track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-team-card,
+  .sc-team-card::before,
+  .sc-team-photo-frame img {
+    transition: none;
+  }
+
+  .sc-team-card:hover,
+  .sc-team-card:hover .sc-team-photo-frame img {
+    transform: none;
+  }
 }
 
 /* 6. Cierre CTA */
@@ -5829,20 +5927,22 @@ body.sc-landing {
 }
 
 /* Equipo legible */
-.sc-landing .sc-team-card {
-  flex: 0 0 min(335px, 84vw);
+@media (max-width: 639px) {
+  .sc-landing .sc-team-card {
+    flex: 0 0 min(335px, 84vw);
+  }
 }
 
 .sc-landing .sc-team-info h3 {
-  font-size: 1.15rem;
+  font-size: 1.14rem;
 }
 
 .sc-landing .sc-team-role {
-  font-size: 0.96rem;
+  font-size: 0.94rem;
 }
 
 .sc-landing .sc-team-bio {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   line-height: 1.58;
 }
 
